@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-02T05:54:30.010Z</updated>
+  <updated>2020-03-02T06:30:39.297Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About me</title>
+    <link href="http://yoursite.com/2020/03/02/About-me/"/>
+    <id>http://yoursite.com/2020/03/02/About-me/</id>
+    <published>2020-03-02T06:14:39.538Z</published>
+    <updated>2020-03-02T06:30:39.297Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;|  A coder，live in Hohhot，China&lt;/p&gt;
+&lt;p&gt;姓名：郭金鑫&lt;/p&gt;
+&lt;p&gt;现居：呼和浩特&lt;/p&gt;
+&lt;p&gt;GitHub：&lt;a href=&quot;https://github.com/GJINXIN/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>About me</title>
