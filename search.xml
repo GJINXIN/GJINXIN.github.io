@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第一篇博客--洁癖Man</title>
+    <url>/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/</url>
+    <content><![CDATA[<p>​      以前在校期间用过博客园 <a href="https://www.cnblogs.com/GJIN/" target="_blank" rel="noopener">洁癖Man</a>，但因为没有养成良好的学习记录习惯，发表的博客不是太多，写的项目遇到的问题解决后都没有记录，而且项目还丢失了一部分。所以在github上搭建一个可以自定义，记录自己平常进步、项目与生活的一个个人博客，在记录自己的进步的同时，希望可以给他人带来一些帮助。</p>
+<h2 id="目前已掌握的技能"><a href="#目前已掌握的技能" class="headerlink" title="目前已掌握的技能"></a>目前已掌握的技能</h2><h3 id="语言类"><a href="#语言类" class="headerlink" title="语言类"></a>语言类</h3><p>C、C++、Java、Python；</p>
+<h3 id="Java-Web"><a href="#Java-Web" class="headerlink" title="Java Web"></a>Java Web</h3><p>JSP+Servlet+JDBC、网页开发；</p>
+<h3 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h3><p>H5开发、Android开发、安卓混合开发、okhttp；</p>
+<h3 id="常用工具类"><a href="#常用工具类" class="headerlink" title="常用工具类"></a>常用工具类</h3><p>IDEA、Eclipse、Android Studio、Wex5、Vscode、Navicat；</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>爬虫；</p>
+<h2 id="已做项目"><a href="#已做项目" class="headerlink" title="已做项目"></a>已做项目</h2><h3 id="掌上医院系统-计算所试验室"><a href="#掌上医院系统-计算所试验室" class="headerlink" title="掌上医院系统 (计算所试验室)"></a>掌上医院系统 (计算所试验室)</h3><p>掌上医院系统是一个改变传统挂号和优化传统医疗程序的系统，可在网上进行挂号和健康咨询等，为患者合理安排时间，且可以查看医院简介和医生介绍，让患者深层次了解医院，是一个真正意义上的面相门诊全流程的移动医联平台，完全贴合医院就诊流程而设计，并且在提高患者满意度的前提下，也提高了医生的服务水平，从问诊出发，以消息通知为核心，覆盖门诊的就医流程，为问诊人提供便捷的门诊服务。</p>
+<h3 id="海外留学生信息交流平台"><a href="#海外留学生信息交流平台" class="headerlink" title="海外留学生信息交流平台"></a>海外留学生信息交流平台</h3><p>为海外留学生打造的一个生活、学习交流平台，包括房屋车辆租赁、物品交易、学习交流、活动发布等功能的平台，包括移动端。</p>
+<h3 id="公司工资管理系统"><a href="#公司工资管理系统" class="headerlink" title="公司工资管理系统"></a>公司工资管理系统</h3><h3 id="学生信息管理系统"><a href="#学生信息管理系统" class="headerlink" title="学生信息管理系统"></a>学生信息管理系统</h3><p> 后面会一直补充该篇博客，更新自己的技能掌握情况。</p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/03/02/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -17,5 +37,11 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+      </tags>
   </entry>
 </search>
