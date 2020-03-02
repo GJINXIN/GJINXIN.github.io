@@ -18,8 +18,8 @@
   
   <entry>
     <title>About me</title>
-    <link href="http://yoursite.com/2020/03/02/About-me/"/>
-    <id>http://yoursite.com/2020/03/02/About-me/</id>
+    <link href="http://yoursite.com/2020/03/02/about/"/>
+    <id>http://yoursite.com/2020/03/02/about/</id>
     <published>2020-03-02T06:14:39.538Z</published>
     <updated>2020-03-02T06:30:39.297Z</updated>
     
@@ -33,31 +33,6 @@
 &lt;p&gt;姓名：郭金鑫&lt;/p&gt;
 &lt;p&gt;现居：呼和浩特&lt;/p&gt;
 &lt;p&gt;GitHub：&lt;a href=&quot;https://github.com/GJINXIN/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About me</title>
-    <link href="http://yoursite.com/2020/03/02/about/"/>
-    <id>http://yoursite.com/2020/03/02/about/</id>
-    <published>2020-03-02T05:53:14.447Z</published>
-    <updated>2020-03-02T05:54:30.010Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;A-Coder&quot;&gt;&lt;a href=&quot;#A-Coder&quot; class=&quot;headerlink&quot; title=&quot;A Coder&quot;&gt;&lt;/a&gt;A
         
       
     
