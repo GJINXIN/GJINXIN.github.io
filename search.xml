@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>About me</title>
+    <url>/2020/03/02/about/</url>
+    <content><![CDATA[<h3 id="A-Coder"><a href="#A-Coder" class="headerlink" title="A Coder"></a>A Coder</h3>]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一篇博客--洁癖Man</title>
     <url>/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/</url>
     <content><![CDATA[<p>​      以前在校期间用过博客园 <a href="https://www.cnblogs.com/GJIN/" target="_blank" rel="noopener">洁癖Man</a>，但因为没有养成良好的学习记录习惯，发表的博客不是太多，写的项目遇到的问题解决后都没有记录，而且项目还丢失了一部分。所以在github上搭建一个可以自定义，记录自己平常进步、项目与生活的一个个人博客，在记录自己的进步的同时，希望可以给他人带来一些帮助。</p>
@@ -12,30 +20,6 @@
 <h2 id="已做项目"><a href="#已做项目" class="headerlink" title="已做项目"></a>已做项目</h2><h3 id="掌上医院系统-计算所试验室"><a href="#掌上医院系统-计算所试验室" class="headerlink" title="掌上医院系统 (计算所试验室)"></a>掌上医院系统 (计算所试验室)</h3><p>掌上医院系统是一个改变传统挂号和优化传统医疗程序的系统，可在网上进行挂号和健康咨询等，为患者合理安排时间，且可以查看医院简介和医生介绍，让患者深层次了解医院，是一个真正意义上的面相门诊全流程的移动医联平台，完全贴合医院就诊流程而设计，并且在提高患者满意度的前提下，也提高了医生的服务水平，从问诊出发，以消息通知为核心，覆盖门诊的就医流程，为问诊人提供便捷的门诊服务。</p>
 <h3 id="海外留学生信息交流平台"><a href="#海外留学生信息交流平台" class="headerlink" title="海外留学生信息交流平台"></a>海外留学生信息交流平台</h3><p>为海外留学生打造的一个生活、学习交流平台，包括房屋车辆租赁、物品交易、学习交流、活动发布等功能的平台，包括移动端。</p>
 <h3 id="公司工资管理系统"><a href="#公司工资管理系统" class="headerlink" title="公司工资管理系统"></a>公司工资管理系统</h3><h3 id="学生信息管理系统"><a href="#学生信息管理系统" class="headerlink" title="学生信息管理系统"></a>学生信息管理系统</h3><p> 后面会一直补充该篇博客，更新自己的技能掌握情况。</p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/03/02/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
