@@ -124,7 +124,8 @@ var _hmt = _hmt || [];
 <p>获取json文件后发现为嵌套格式，具体格式大家可以打开上方网址查看：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> &quot;data&quot;:[</span><br><span class="line"> 		&#123;</span><br><span class="line"> 		 &quot;data&quot;:&#123;省份&#125;</span><br><span class="line">         &quot;citys&quot;:[</span><br><span class="line">         		  &#123;城市&#125;&#123;&#125;.....</span><br><span class="line">         		 ]		 </span><br><span class="line"> 		&#125;</span><br><span class="line"> 		&#123;</span><br><span class="line"> 		 &quot;data&quot;:&#123;省份&#125;</span><br><span class="line">         &quot;citys&quot;:[</span><br><span class="line">         		  &#123;城市&#125;&#123;&#125;.....</span><br><span class="line">         		 ]		 </span><br><span class="line"> 		&#125;</span><br><span class="line"> &quot;country&quot;:[</span><br><span class="line"> 			&#123;其他国家&#125;</span><br><span class="line"> 		   ]	</span><br><span class="line"> 		]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="%5Cimages%5Cfeiyan1.png" alt="feiyan1"></p>
+<img src="\images\feiyan1.png" alt="Alt text" />
+
 <h4 id="解析数据"><a href="#解析数据" class="headerlink" title="解析数据"></a>解析数据</h4><p>因为我只想获取各个城市的名称、感染人数、治愈人数和死亡人数，所以需要嵌套循环来获取并逐个输出。代码如下：</p>
 <p>省级数据获取：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">provincename = state[<span class="string">'data'</span>][i][<span class="string">'data'</span>][<span class="string">'provinceName'</span>] </span><br><span class="line">confirmedCount = state[<span class="string">'data'</span>][i][<span class="string">'data'</span>][<span class="string">'confirmedCount'</span>]</span><br><span class="line">curedCount = state[<span class="string">'data'</span>][i][<span class="string">'data'</span>][<span class="string">'curedCount'</span>] </span><br><span class="line">deadCount = state[<span class="string">'data'</span>][i][<span class="string">'data'</span>][<span class="string">'deadCount'</span>]</span><br></pre></td></tr></table></figure>
@@ -137,7 +138,10 @@ var _hmt = _hmt || [];
 
 <p>以上就是嵌套json解析格式。</p>
 <p>输出效果：</p>
-<p><img src="%5Cimages%5Cfeiyan2.png" alt="feiyan2"></p>
+<img src="\images\feiyan2.png" alt="Alt text" />
+
+
+
 <p><strong>源码地址：</strong><a href="https://github.com/GJINXIN/python-web-scraping/blob/master/肺炎数据解析并存储.py" target="_blank" rel="noopener">github</a></p>
 
       
