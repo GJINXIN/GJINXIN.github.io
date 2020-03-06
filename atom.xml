@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-03T02:51:57.062Z</updated>
+  <updated>2020-03-06T02:36:09.669Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDBC工具类的编写与调用</title>
+    <link href="http://yoursite.com/2020/03/06/JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%B0%83%E7%94%A8/"/>
+    <id>http://yoursite.com/2020/03/06/JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%B0%83%E7%94%A8/</id>
+    <published>2020-03-06T02:33:58.089Z</published>
+    <updated>2020-03-06T02:36:09.669Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;封装工具类&quot;&gt;&lt;a href=&quot;#封装工具类&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
+    
+  </entry>
   
   <entry>
     <title>Python爬虫解析多级嵌套json</title>
