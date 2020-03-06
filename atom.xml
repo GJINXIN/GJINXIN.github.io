@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-06T02:36:09.669Z</updated>
+  <updated>2020-03-06T10:59:04.397Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JDBC-sql注入的安全性问题</title>
+    <link href="http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/</id>
+    <published>2020-03-06T10:57:24.117Z</published>
+    <updated>2020-03-06T10:59:04.397Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;sql注入的安全性问题&quot;&gt;&lt;a href=&quot;#sql注入的安全性问题&quot; class=&quot;headerlink&quot; title=&quot;sql注入的安全性问题&quot;&gt;&lt;/a&gt;sql注入的安全性问题&lt;/h3&gt;&lt;p&gt;在使用 Statement 类执行 sql 对象时，拼接的 sql
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
+    
+      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
+    
+  </entry>
   
   <entry>
     <title>JDBC工具类的编写与调用</title>

@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JDBC-sql注入的安全性问题</title>
+    <url>/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="sql注入的安全性问题"><a href="#sql注入的安全性问题" class="headerlink" title="sql注入的安全性问题"></a>sql注入的安全性问题</h3><p>在使用 Statement 类执行 sql 对象时，拼接的 sql 语句可能会有特殊关键子参与字符串拼接，造成数据库信息泄露等问题。</p>
+<p>使用 Statement 类的 sql 语句格式：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String sql = <span class="string">"select *from admin where name = '"</span>+username+<span class="string">"' and password = '"</span>+password+<span class="string">"'"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>当遇到 sql 注入语句：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请输入用户名:</span><br><span class="line">abcdefg</span><br><span class="line">请输入密码：</span><br><span class="line">s<span class="string">' or '</span>a<span class="string">' = '</span>a</span><br><span class="line">select * from user where username = <span class="string">'abcdefg'</span> and password = <span class="string">'s'</span> or <span class="string">'a'</span> = <span class="string">'a'</span></span><br><span class="line">登录成功！</span><br></pre></td></tr></table></figure>
+
+<p>可以看到 sql 语句不管用户名和密码是什么，该语句都会正确执行，登录成功并获得所有用户信息！</p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>为了避免恶意的 sql 注入，就要用到 PreparedStatement 类：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String sql = <span class="string">"select *from admin where aname = ? and apassword = ?"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>执行语句为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">pstmt = conn.prepareStatement(sql);</span><br></pre></td></tr></table></figure>
+
+<p>赋值语句为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">pstmt.setString(<span class="number">1</span>,username);</span><br><span class="line">pstmt.setString(<span class="number">2</span>,password);</span><br></pre></td></tr></table></figure>
+
+<p>执行结果为：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">请输入用户名:</span><br><span class="line">abcdefg</span><br><span class="line">请输入密码：</span><br><span class="line">s<span class="string">' or '</span>a<span class="string">' = '</span>a</span><br><span class="line">登录失败，用户名或密码错误！</span><br></pre></td></tr></table></figure>
+
+<p>成功避免了 sql 注入。</p>
+]]></content>
+      <categories>
+        <category>JAVAWeb</category>
+      </categories>
+      <tags>
+        <tag>JDBC</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JDBC工具类的编写与调用</title>
     <url>/2020/03/06/JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%B0%83%E7%94%A8/</url>
     <content><![CDATA[<h3 id="封装工具类"><a href="#封装工具类" class="headerlink" title="封装工具类"></a>封装工具类</h3><p>为了减少代码工作量，将JDBC注册、获取连接、释放连接封装为一个工具类；<br>具体代码如下：</p>
