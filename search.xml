@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bootstrap框架的导入及使用</title>
+    <url>/2020/03/07/Bootstrap%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AF%BC%E5%85%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h3 id="下载及导入"><a href="#下载及导入" class="headerlink" title="下载及导入"></a>下载及导入</h3><p><a href="https://v3.bootcss.com/" target="_blank" rel="noopener">Bootstrap下载</a>，下载后解压将 css、fonts、js 文件夹复制到 static web  项目下，导入便完成；同时需要导入jquery  jar包，下载后放入 js 文件夹即可；</p>
+<h3 id="页面引入资源文件"><a href="#页面引入资源文件" class="headerlink" title="页面引入资源文件"></a>页面引入资源文件</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPEhtml&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">htmllang="zh-CN"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">metacharset="utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">metahttp-equiv="X-UA-Compatible"content="IE=edge"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">metaname="viewport"content="width=device-width,initial-scale=1"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>BootstrapHelloWorld<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--Bootstrap--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">linkhref="css</span>/<span class="attr">bootstrap.min.css</span>"<span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--jQuery(Bootstrap的所有JavaScript插件都依赖jQuery，所以必须放在前边)--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">scriptsrc="js</span>/<span class="attr">jquery-3.2.1.min.js</span>"&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--加载Bootstrap的所有JavaScript插件。你也可以根据需要只加载单个插件。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">scriptsrc="js</span>/<span class="attr">bootstrap.min.js</span>"&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>你好，世界！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="编写页面"><a href="#编写页面" class="headerlink" title="编写页面"></a>编写页面</h3><p>Bootstrap定义了很多 css 样式和 js 插件，可以使用这些样式和插件得到丰富的页面效果。<br>响应式布局使得同一套页面可以兼容不同分辨率的设备，依赖于栅格系统。<br>具体样式和插件的使用可参考官网文档。</p>
+]]></content>
+      <categories>
+        <category>JAVAWeb</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Druid数据库连接池工具类的编写</title>
     <url>/2020/03/06/Druid%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99/</url>
     <content><![CDATA[<h3 id="封装工具类"><a href="#封装工具类" class="headerlink" title="封装工具类"></a>封装工具类</h3><p>为了减少代码工作量，将JDBC注册、获取连接、释放连接封装为一个工具类；<br>具体代码如下：</p>
