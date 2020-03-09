@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-07T14:33:01.953Z</updated>
+  <updated>2020-03-09T13:35:44.276Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Servlet定义及方法</title>
+    <link href="http://yoursite.com/2020/03/09/Servlet%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/03/09/Servlet%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%96%B9%E6%B3%95/</id>
+    <published>2020-03-09T13:34:46.000Z</published>
+    <updated>2020-03-09T13:35:44.276Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;创建 JavaEE 项目后，定义一个类，实现 Servlet 接口方法为：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JANAWeb" scheme="http://yoursite.com/categories/JANAWeb/"/>
+    
+    
+      <category term="Servlet" scheme="http://yoursite.com/tags/Servlet/"/>
+    
+  </entry>
   
   <entry>
     <title>Bootstrap框架的导入及使用</title>
