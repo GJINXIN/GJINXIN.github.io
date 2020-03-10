@@ -38,7 +38,7 @@
 <p>在 Servlet 3.0 后，可以不用配置 web.xml 文件，配置 Servlet 方法为使用 @WebServlet 注解：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/demo"</span>)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>JANAWeb</category>
+        <category>JAVAWeb</category>
       </categories>
       <tags>
         <tag>Servlet</tag>
