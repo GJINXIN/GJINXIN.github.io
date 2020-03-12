@@ -121,6 +121,8 @@ var _hmt = _hmt || [];
 <p>当遇到 sql 注入语句：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">请输入用户名:</span><br><span class="line">abcdefg</span><br><span class="line">请输入密码：</span><br><span class="line">s<span class="string">' or '</span>a<span class="string">' = '</span>a</span><br><span class="line">select * from user where username = <span class="string">'abcdefg'</span> and password = <span class="string">'s'</span> or <span class="string">'a'</span> = <span class="string">'a'</span></span><br><span class="line">登录成功！</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+
 <p>可以看到 sql 语句不管用户名和密码是什么，该语句都会正确执行，登录成功并获得所有用户信息！</p>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>为了避免恶意的 sql 注入，就要用到 PreparedStatement 类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"select *from admin where aname = ? and apassword = ?"</span>;</span><br></pre></td></tr></table></figure>

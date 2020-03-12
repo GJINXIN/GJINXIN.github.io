@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-10T14:06:48.242Z</updated>
+  <updated>2020-03-12T12:59:56.706Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="http://yoursite.com/2020/03/10/Request%E8%AF%B7%E6%B1%82%E6%B6%88%E6%81%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E6%9E%90/"/>
     <id>http://yoursite.com/2020/03/10/Request%E8%AF%B7%E6%B1%82%E6%B6%88%E6%81%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E6%9E%90/</id>
     <published>2020-03-10T14:04:56.622Z</published>
-    <updated>2020-03-10T14:06:48.242Z</updated>
+    <updated>2020-03-12T12:59:56.706Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;数据格式&quot;&gt;&lt;a href=&quot;#数据格式&quot; class=&quot;headerlink&quot; title=&quot;数据格式&quot;&gt;&lt;/a&gt;数据格式&lt;/h3&gt;&lt;p&gt;请求消息数据格式为：&lt;br&gt;    1.请求行&lt;br&gt;    2.请求头&lt;br&gt;    3.请求空行&lt;br&gt;   
-        
-      
+      &lt;h3 id=&quot;数据格式&quot;&gt;&lt;a href=&quot;#数据格式&quot; class=&quot;headerlink&quot; title=&quot;数据格式&quot;&gt;&lt;/a&gt;数据格式&lt;/h3&gt;&lt;p&gt;请求消息数据格式为：&lt;br&gt;    1.请求行&lt;br&gt;    2.请求头&lt;br&gt;    3.请求空行&lt;br&gt;    4.请求体&lt;br&gt;示例：&lt;br&gt;GET /index.html  HTTP/1.1&lt;br&gt;Host: localhost&lt;br&gt;User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36&lt;br&gt;Accept:  text/html,image/,/*;q=0.8&lt;br&gt;Referer: &lt;a href=&quot;http://localhost/day14/index.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost/day14/index.html&lt;/a&gt;&lt;br&gt;Accept-Encoding: gzip, deflate, sdch&lt;br&gt;Accept-Language: zh-CN,zh;q=0.8&lt;/p&gt;
     
     </summary>
     
@@ -48,18 +42,12 @@
     <link href="http://yoursite.com/2020/03/09/Servlet%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2020/03/09/Servlet%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%96%B9%E6%B3%95/</id>
     <published>2020-03-09T13:34:46.000Z</published>
-    <updated>2020-03-10T14:37:08.551Z</updated>
+    <updated>2020-03-12T12:59:39.441Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;创建 JavaEE 项目后，定义一个类，实现 Servlet 接口方法为：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
+      &lt;p&gt;创建 JavaEE 项目后，定义一个类，实现 Servlet 接口方法为：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ServletDemo1&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Servlet&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -76,17 +64,11 @@
     <link href="http://yoursite.com/2020/03/07/Bootstrap%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AF%BC%E5%85%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2020/03/07/Bootstrap%E6%A1%86%E6%9E%B6%E7%9A%84%E5%AF%BC%E5%85%A5%E5%8F%8A%E4%BD%BF%E7%94%A8/</id>
     <published>2020-03-07T14:31:42.886Z</published>
-    <updated>2020-03-07T14:33:01.953Z</updated>
+    <updated>2020-03-12T13:01:47.269Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;下载及导入&quot;&gt;&lt;a href=&quot;#下载及导入&quot; class=&quot;headerlink&quot; title=&quot;下载及导入&quot;&gt;&lt;/a&gt;下载及导入&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://v3.bootcss.com/&quot; target=&quot;_blank&quot;
-        
-      
+      &lt;h3 id=&quot;下载及导入&quot;&gt;&lt;a href=&quot;#下载及导入&quot; class=&quot;headerlink&quot; title=&quot;下载及导入&quot;&gt;&lt;/a&gt;下载及导入&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://v3.bootcss.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bootstrap下载&lt;/a&gt;，下载后解压将 css、fonts、js 文件夹复制到 static web  项目下，导入便完成；同时需要导入jquery  jar包，下载后放入 js 文件夹即可；&lt;/p&gt;
     
     </summary>
     
@@ -103,17 +85,11 @@
     <link href="http://yoursite.com/2020/03/06/Druid%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99/"/>
     <id>http://yoursite.com/2020/03/06/Druid%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99/</id>
     <published>2020-03-06T14:44:42.203Z</published>
-    <updated>2020-03-06T14:46:18.544Z</updated>
+    <updated>2020-03-12T13:01:32.457Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;封装工具类&quot;&gt;&lt;a href=&quot;#封装工具类&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;封装工具类&quot;&gt;&lt;a href=&quot;#封装工具类&quot; class=&quot;headerlink&quot; title=&quot;封装工具类&quot;&gt;&lt;/a&gt;封装工具类&lt;/h3&gt;&lt;p&gt;为了减少代码工作量，将JDBC注册、获取连接、释放连接封装为一个工具类；&lt;br&gt;具体代码如下：&lt;/p&gt;
     
     </summary>
     
@@ -132,17 +108,16 @@
     <link href="http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/</id>
     <published>2020-03-06T10:57:24.117Z</published>
-    <updated>2020-03-06T10:59:04.397Z</updated>
+    <updated>2020-03-12T13:01:16.771Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;sql注入的安全性问题&quot;&gt;&lt;a href=&quot;#sql注入的安全性问题&quot; class=&quot;headerlink&quot; title=&quot;sql注入的安全性问题&quot;&gt;&lt;/a&gt;sql注入的安全性问题&lt;/h3&gt;&lt;p&gt;在使用 Statement 类执行 sql 对象时，拼接的 sql
-        
-      
+      &lt;h3 id=&quot;sql注入的安全性问题&quot;&gt;&lt;a href=&quot;#sql注入的安全性问题&quot; class=&quot;headerlink&quot; title=&quot;sql注入的安全性问题&quot;&gt;&lt;/a&gt;sql注入的安全性问题&lt;/h3&gt;&lt;p&gt;在使用 Statement 类执行 sql 对象时，拼接的 sql 语句可能会有特殊关键子参与字符串拼接，造成数据库信息泄露等问题。&lt;/p&gt;
+&lt;p&gt;使用 Statement 类的 sql 语句格式：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;String sql = &lt;span class=&quot;string&quot;&gt;&quot;select *from admin where name = &#39;&quot;&lt;/span&gt;+username+&lt;span class=&quot;string&quot;&gt;&quot;&#39; and password = &#39;&quot;&lt;/span&gt;+password+&lt;span class=&quot;string&quot;&gt;&quot;&#39;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;当遇到 sql 注入语句：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;请输入用户名:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;abcdefg&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;请输入密码：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s&lt;span class=&quot;string&quot;&gt;&#39; or &#39;&lt;/span&gt;a&lt;span class=&quot;string&quot;&gt;&#39; = &#39;&lt;/span&gt;a&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select * from user where username = &lt;span class=&quot;string&quot;&gt;&#39;abcdefg&#39;&lt;/span&gt; and password = &lt;span class=&quot;string&quot;&gt;&#39;s&#39;&lt;/span&gt; or &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;登录成功！&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -161,17 +136,11 @@
     <link href="http://yoursite.com/2020/03/06/JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%B0%83%E7%94%A8/"/>
     <id>http://yoursite.com/2020/03/06/JDBC%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%B0%83%E7%94%A8/</id>
     <published>2020-03-06T02:33:58.089Z</published>
-    <updated>2020-03-06T02:36:09.669Z</updated>
+    <updated>2020-03-12T13:00:42.527Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;封装工具类&quot;&gt;&lt;a href=&quot;#封装工具类&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;封装工具类&quot;&gt;&lt;a href=&quot;#封装工具类&quot; class=&quot;headerlink&quot; title=&quot;封装工具类&quot;&gt;&lt;/a&gt;封装工具类&lt;/h3&gt;&lt;p&gt;为了减少代码工作量，将JDBC注册、获取连接、释放连接封装为一个工具类；&lt;br&gt;具体代码如下：&lt;/p&gt;
     
     </summary>
     
@@ -188,17 +157,13 @@
     <link href="http://yoursite.com/2020/03/03/%E8%82%BA%E7%82%8E%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E5%B9%B6%E8%A7%A3%E6%9E%90/"/>
     <id>http://yoursite.com/2020/03/03/%E8%82%BA%E7%82%8E%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E5%B9%B6%E8%A7%A3%E6%9E%90/</id>
     <published>2020-03-03T02:43:00.832Z</published>
-    <updated>2020-03-03T02:51:57.062Z</updated>
+    <updated>2020-03-12T12:59:16.889Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Python爬虫解析多级嵌套json&quot;&gt;&lt;a href=&quot;#Python爬虫解析多级嵌套json&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;Python爬虫解析多级嵌套json&quot;&gt;&lt;a href=&quot;#Python爬虫解析多级嵌套json&quot; class=&quot;headerlink&quot; title=&quot;Python爬虫解析多级嵌套json&quot;&gt;&lt;/a&gt;Python爬虫解析多级嵌套json&lt;/h3&gt;&lt;p&gt;最近刚接触Python爬虫，正好最近肺炎在全国蔓延，所以准备从网站爬取肺炎实时数据，并解析自己想要的数据。获取json数据网址为  &lt;a href=&quot;https://m.look.360.cn/events/feiyan&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://m.look.360.cn/events/feiyan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;爬取网址：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    url=&lt;span class=&quot;string&quot;&gt;&#39;https://m.look.360.cn/events/feiyan&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    headers = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;User-Agent&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;Mozilla/5.0 (Windows NT 10.0; WOW64) 		    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36 QIHU 360EE&#39;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    parse_page(url)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -219,20 +184,16 @@
     <link href="http://yoursite.com/2020/03/02/about/"/>
     <id>http://yoursite.com/2020/03/02/about/</id>
     <published>2020-03-02T06:14:39.538Z</published>
-    <updated>2020-03-08T01:33:17.580Z</updated>
+    <updated>2020-03-12T13:02:09.905Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;|  A coder，live in Hohhot，China&lt;/p&gt;
+      &lt;p&gt;|  A coder，live in Hohhot，China&lt;/p&gt;
 &lt;p&gt;姓名：郭金鑫&lt;/p&gt;
 &lt;p&gt;现居：呼和浩特&lt;/p&gt;
-&lt;p&gt;GitHub：&lt;a href=&quot;https://github.com/GJINXIN/&quot; target=&quot;_blank&quot;
-        
-      
+&lt;p&gt;GitHub：&lt;a href=&quot;https://github.com/GJINXIN/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GJINXIN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;QQ：1782561167&lt;/p&gt;
+&lt;p&gt;微信：gjx1782561167&lt;/p&gt;
     
     </summary>
     
@@ -247,17 +208,12 @@
     <link href="http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/"/>
     <id>http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/</id>
     <published>2020-03-02T03:57:25.836Z</published>
-    <updated>2020-03-02T04:55:55.464Z</updated>
+    <updated>2020-03-12T12:58:38.828Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;​      以前在校期间用过博客园 &lt;a href=&quot;https://www.cnblogs.com/GJIN/&quot; target=&quot;_blank&quot;
-        
-      
+      &lt;p&gt;​      以前在校期间用过博客园 &lt;a href=&quot;https://www.cnblogs.com/GJIN/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;洁癖Man&lt;/a&gt;，但因为没有养成良好的学习记录习惯，发表的博客不是太多，写的项目遇到的问题解决后都没有记录，而且项目还丢失了一部分。所以在github上搭建一个可以自定义，记录自己平常进步、项目与生活的一个个人博客，在记录自己的进步的同时，希望可以给他人带来一些帮助。&lt;/p&gt;
+&lt;h2 id=&quot;目前已掌握的技能&quot;&gt;&lt;a href=&quot;#目前已掌握的技能&quot; class=&quot;headerlink&quot; title=&quot;目前已掌握的技能&quot;&gt;&lt;/a&gt;目前已掌握的技能&lt;/h2&gt;&lt;h3 id=&quot;语言类&quot;&gt;&lt;a href=&quot;#语言类&quot; class=&quot;headerlink&quot; title=&quot;语言类&quot;&gt;&lt;/a&gt;语言类&lt;/h3&gt;&lt;p&gt;C、C++、Java、Python；&lt;/p&gt;
     
     </summary>
     
