@@ -10,7 +10,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    简单的验证码实现逻辑及点击切换 |  洁癖Man
+    JAVAWeb文件下载功能 |  洁癖Man
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -46,7 +46,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-简单的验证码实现逻辑及点击切换" class="article article-type-post" itemscope
+  <article id="post-JAVAWeb文件下载功能" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -54,7 +54,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  简单的验证码实现逻辑及点击切换
+  JAVAWeb文件下载功能
 </h1>
   
 
@@ -63,8 +63,8 @@ var _hmt = _hmt || [];
 
     
     <div class="article-meta">
-      <a href="/2020/03/13/%E7%AE%80%E5%8D%95%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2/" class="article-date">
-  <time datetime="2020-03-13T14:03:05.987Z" itemprop="datePublished">2020-03-13</time>
+      <a href="/2020/03/14/JAVAWeb%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" class="article-date">
+  <time datetime="2020-03-14T12:33:41.410Z" itemprop="datePublished">2020-03-14</time>
 </a>
       
   <div class="article-category">
@@ -78,7 +78,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">401字</span>
+            <span class="post-count">352字</span>
         </span>
     </span>
 
@@ -114,16 +114,21 @@ var _hmt = _hmt || [];
       
 
       
-      <p>为了防止恶意表单注册，注册界面都会加上验证码功能。服务器会在内存生成验证码图片，并显示随机内容到网页，并且要防止智能识别。具体代码如下：</p>
+      <ol>
+<li><p>编写html页面，编辑超链接 href 属性，指向Servlet并传递要下载的文件名及格式</p>
+</li>
+<li><p>Servlet：*获取文件名称</p>
+<p>​                *使用字节输入流加载文件进内存</p>
+<p>​                *指定 response 的响应头：content-disposition:attachmement;filename=xxx</p>
+<p>​                *将数据写出到 response 输出流</p>
+</li>
+</ol>
+<h3 id="html-a标签格式"><a href="#html-a标签格式" class="headerlink" title="html a标签格式"></a>html a标签格式</h3><p> href=”/day15/downloadServlet?filename=鬼刀.png”</p>
 <a id="more"></a>
 
-<h3 id="验证码图片生成"><a href="#验证码图片生成" class="headerlink" title="验证码图片生成"></a>验证码图片生成</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/checkCodeServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CheckCodeServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> width = <span class="number">100</span>;</span><br><span class="line">        <span class="keyword">int</span> height = <span class="number">50</span>;</span><br><span class="line">        <span class="comment">//创建一个对象，在内存中画图（验证码图片对象）</span></span><br><span class="line">        BufferedImage image = <span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_3BYTE_BGR);</span><br><span class="line">        <span class="comment">//美化图片</span></span><br><span class="line">        <span class="comment">//填充背景色</span></span><br><span class="line">        Graphics g = image.getGraphics();<span class="comment">//画笔对象</span></span><br><span class="line">        g.setColor(Color.pink);<span class="comment">//设置画笔颜色</span></span><br><span class="line">        g.fillRect(<span class="number">0</span>,<span class="number">0</span>,width,height);</span><br><span class="line">        <span class="comment">//画边框</span></span><br><span class="line">        g.setColor(Color.BLUE);</span><br><span class="line">        g.drawRect(<span class="number">0</span>,<span class="number">0</span>,width -<span class="number">1</span>,height-<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        String str = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"</span>;</span><br><span class="line">        <span class="comment">//生成随机脚标</span></span><br><span class="line">        Random ran = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//写验证码</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = ran.nextInt(str.length());</span><br><span class="line">            <span class="comment">//获取字符</span></span><br><span class="line">            <span class="keyword">char</span> ch = str.charAt(index);</span><br><span class="line">            g.drawString(ch+<span class="string">""</span>,width/<span class="number">5</span>*i,height/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//画干扰线</span></span><br><span class="line">        g.setColor(Color.green);</span><br><span class="line">        <span class="comment">//随机生成坐标点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> x1 = ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> x2 = ran.nextInt(width);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> y1 = ran.nextInt(height);</span><br><span class="line">            <span class="keyword">int</span> y2 = ran.nextInt(height);</span><br><span class="line">            g.drawLine(x1,y1,x2,y2);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//键土拍你输出到页面展示</span></span><br><span class="line">        ImageIO.write(image,<span class="string">"jpg"</span>,response.getOutputStream());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(request,response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/downloadServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DownloadServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//获取请求参数,文件名称</span></span><br><span class="line">        String filename = request.getParameter(<span class="string">"filename"</span>);</span><br><span class="line">        <span class="comment">//使用字节输入流加载文件进内存</span></span><br><span class="line">        <span class="comment">//找到文件的服务器路径</span></span><br><span class="line">        ServletContext servletContext = <span class="keyword">this</span>.getServletContext();</span><br><span class="line">        String realPath = servletContext.getRealPath(<span class="string">"/img/"</span> + filename);</span><br><span class="line">        <span class="comment">//用字节流关联</span></span><br><span class="line">        FileInputStream fis = <span class="keyword">new</span> FileInputStream(realPath);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置response的响应头</span></span><br><span class="line">        <span class="comment">//设置响应头类型：content-type</span></span><br><span class="line">        String mimeType = servletContext.getMimeType(filename);</span><br><span class="line">        response.setHeader(<span class="string">"content-type"</span>,mimeType);</span><br><span class="line">        <span class="comment">//设置响应头打开方式：content-disposition</span></span><br><span class="line">        <span class="comment">//解决中文文件名问题</span></span><br><span class="line">        <span class="comment">//获取user-agent请求头</span></span><br><span class="line">        String agent = request.getHeader(<span class="string">"user-agent"</span>);</span><br><span class="line">        <span class="comment">//使用工具类方法编码文件名即可</span></span><br><span class="line">        String fileName = DownLoadUtils.getFileName(agent, filename);</span><br><span class="line">        response.setHeader(<span class="string">"content-disposition"</span>,<span class="string">"attachment;filename="</span>+fileName);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将输入流的数据写出到输出流中</span></span><br><span class="line">        ServletOutputStream sos = response.getOutputStream();</span><br><span class="line">        <span class="keyword">byte</span>[] buff = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">8</span>];</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((len = fis.read(buff))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            sos.write(buff,<span class="number">0</span>,len);</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(request,response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="图片点击切换"><a href="#图片点击切换" class="headerlink" title="图片点击切换"></a>图片点击切换</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"checkCode"</span> <span class="attr">src</span>=<span class="string">"/day15/checkCodeServlet"</span> <span class="attr">onclick</span>=<span class="string">"this.src='/day15/checkCodeServlet?' + new Date().getTime();"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"change"</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>看不清换一张<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>服务器会有图片缓存，路径不变的画服务器不会发送新数据到客户端，验证码就不能刷新，可以加随机数或时间戳到路径后。</p>
+<p>注：解决中文文件名下载不能正常显示问题，需要用到 DownLoadUtils 类获取浏览器编码方式，百度搜索下载即可。</p>
 
       
       <!-- reward -->
@@ -189,14 +194,14 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/13/%E7%AE%80%E5%8D%95%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/03/14/JAVAWeb%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" rel="tag">验证码</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/" rel="tag">文件下载</a></li></ul>
 
 
     </footer>
@@ -207,19 +212,10 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
-      <a href="/2020/03/14/JAVAWeb%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            JAVAWeb文件下载功能
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/03/10/Request%E8%AF%B7%E6%B1%82%E6%B6%88%E6%81%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E6%9E%90/" class="article-nav-link">
+      <a href="/2020/03/13/%E7%AE%80%E5%8D%95%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Request请求消息数据的解析</div>
+        <div class="article-nav-title">简单的验证码实现逻辑及点击切换</div>
       </a>
     
   </nav>
