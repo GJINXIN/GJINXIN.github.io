@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-14T12:35:57.677Z</updated>
+  <updated>2020-03-16T09:19:58.471Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cookie获取客户端信息及响应</title>
+    <link href="http://yoursite.com/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/"/>
+    <id>http://yoursite.com/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/</id>
+    <published>2020-03-16T09:18:57.757Z</published>
+    <updated>2020-03-16T09:19:58.471Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用户没有登录时，cookie常用来完成服务器对客户端的省份识别及一些设置的保存。&lt;/p&gt;
+&lt;p&gt;以下为一个简单的记录用户上次访问时间的功能。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="Cookie" scheme="http://yoursite.com/tags/Cookie/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVAWeb文件下载功能</title>
