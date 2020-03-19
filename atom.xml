@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-16T13:07:04.786Z</updated>
+  <updated>2020-03-19T11:57:03.927Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JAVAWeb列表数据批量删除思路及实现</title>
+    <link href="http://yoursite.com/2020/03/19/JAVAWeb%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%80%9D%E8%B7%AF%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2020/03/19/JAVAWeb%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%80%9D%E8%B7%AF%E5%8F%8A%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-03-19T11:54:05.756Z</published>
+    <updated>2020-03-19T11:57:03.927Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;带复选框 checkbox 的列表要实现批量删除的功能，首先要获取被选中的信息的全部 id，可以把该列表放入一个 form 表单中，以获取表单信息的方式获取全部 id，然后遍历 id，循环删除所有信息。&lt;br&gt;列表形式：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/03/19/OwKoQla3PRXrCxI.png&quot; alt=&quot;sp20200319_190808_879.png&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="web列表批量删除" scheme="http://yoursite.com/tags/web%E5%88%97%E8%A1%A8%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>Session-判断用户登陆验证码是否正确</title>
