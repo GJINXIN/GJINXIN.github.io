@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-20T08:01:21.690Z</updated>
+  <updated>2020-03-20T08:03:16.057Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://yoursite.com/2020/03/20/JAVAWeb%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2020/03/20/JAVAWeb%E5%88%86%E9%A1%B5%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</id>
     <published>2020-03-20T08:00:02.196Z</published>
-    <updated>2020-03-20T08:01:21.690Z</updated>
+    <updated>2020-03-20T08:03:16.057Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;当管理成百上千条数据，并在列表显示时，数据全部放在一页显示效率低而且加载速度会变慢。这时就需要将数据分页显示。&lt;br&gt;示例：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/03/20/8p1Y9tlqAOLZKGW.png&quot;
-        
-      
+      &lt;p&gt;当管理成百上千条数据，并在列表显示时，数据全部放在一页显示效率低而且加载速度会变慢。这时就需要将数据分页显示。&lt;br&gt;示例：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/03/20/8p1Y9tlqAOLZKGW.png&quot; alt=&quot;Snipaste_2020-03-20_15-24-20.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;具体思路为，编写 PageBean 获取总的记录数、每页显示条数和当前页码，并通过计算获取总页码数。并按页获取数据存入 list，每次点下一页获取之后的数据，每次点前一页显示之前的数据，根据当前页码和每页显示数，多次获取列表数据并显示。并要注意下一页上一页功能可能出现的bug。&lt;/p&gt;
     
     </summary>
     
