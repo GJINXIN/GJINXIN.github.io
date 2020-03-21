@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-20T13:07:04.600Z</updated>
+  <updated>2020-03-21T13:02:40.752Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Filter过滤器验证用户是否登陆功能</title>
+    <link href="http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E5%99%A8%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E5%99%A8%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-03-21T13:00:53.819Z</published>
+    <updated>2020-03-21T13:02:40.752Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了保护信息安全，防止直接访问信息页，需要验证用户是否登陆。思路为，先过滤掉登陆功能所包含资源的路径，在访问其他资源时判断用户是否登陆——判断 Session 中是否包含User。有的话放行，没有的话跳转到登陆页。&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/03/21/ShtnIeXgMNaHALd.png&quot; alt=&quot;Snipaste_2020-03-21_20-50-13.png&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="filter" scheme="http://yoursite.com/tags/filter/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVAWeb分页中查询功能的实现</title>
