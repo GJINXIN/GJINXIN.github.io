@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-21T13:02:40.752Z</updated>
+  <updated>2020-03-21T15:28:13.381Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Filter过滤敏感词汇</title>
+    <link href="http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87/"/>
+    <id>http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87/</id>
+    <published>2020-03-21T15:26:55.361Z</published>
+    <updated>2020-03-21T15:28:13.381Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;过滤敏感词汇的实现，需要对 request 对象进行增强，增强获取参数的相关方法，然后替换敏感词汇为***。使用代理模式实现&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="filter" scheme="http://yoursite.com/tags/filter/"/>
+    
+  </entry>
   
   <entry>
     <title>Filter过滤器验证用户是否登陆功能</title>
