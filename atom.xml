@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-21T15:28:13.381Z</updated>
+  <updated>2020-03-22T13:35:17.574Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JQuery-广告的自动展示与关闭</title>
+    <link href="http://yoursite.com/2020/03/22/JQuery-%E5%B9%BF%E5%91%8A%E7%9A%84%E8%87%AA%E5%8A%A8%E5%B1%95%E7%A4%BA%E4%B8%8E%E5%85%B3%E9%97%AD/"/>
+    <id>http://yoursite.com/2020/03/22/JQuery-%E5%B9%BF%E5%91%8A%E7%9A%84%E8%87%AA%E5%8A%A8%E5%B1%95%E7%A4%BA%E4%B8%8E%E5%85%B3%E9%97%AD/</id>
+    <published>2020-03-22T13:34:07.955Z</published>
+    <updated>2020-03-22T13:35:17.574Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;编写两个事件，广告的显示与关闭，设定动画后，在页面加载时设定计数器，3秒后显示广告，5秒后广告自动消失&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="JQuery" scheme="http://yoursite.com/tags/JQuery/"/>
+    
+  </entry>
   
   <entry>
     <title>Filter过滤敏感词汇</title>
