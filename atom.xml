@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-23T09:00:07.515Z</updated>
+  <updated>2020-03-24T12:58:17.665Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Redis 数据库连接池编写</title>
+    <link href="http://yoursite.com/2020/03/24/Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%BC%96%E5%86%99/"/>
+    <id>http://yoursite.com/2020/03/24/Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%BC%96%E5%86%99/</id>
+    <published>2020-03-24T12:56:19.723Z</published>
+    <updated>2020-03-24T12:58:17.665Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Utils-类编写&quot;&gt;&lt;a href=&quot;#Utils-类编写&quot; class=&quot;headerlink&quot; title=&quot;Utils 类编写&quot;&gt;&lt;/a&gt;Utils 类编写&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JedisPoolUtils&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; JedisPool jedisPool;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//读取配置文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(&quot;jedis.properties&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//创建Properties对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        Properties pro = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Properties();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//关联文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pro.load(is);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (IOException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//获取数据，设置到JedisPoolConfig中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        JedisPoolConfig config = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JedisPoolConfig();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        config.setMaxTotal(Integer.parseInt(pro.getProperty(&lt;span class=&quot;string&quot;&gt;&quot;maxTotal&quot;&lt;/span&gt;)));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        config.setMaxIdle(Integer.parseInt(pro.getProperty(&lt;span class=&quot;string&quot;&gt;&quot;maxIdle&quot;&lt;/span&gt;)));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//初始化JedisPool&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        jedisPool = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JedisPool(config,pro.getProperty(&lt;span class=&quot;string&quot;&gt;&quot;host&quot;&lt;/span&gt;),Integer.parseInt(pro.getProperty(&lt;span class=&quot;string&quot;&gt;&quot;port&quot;&lt;/span&gt;)));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 获取连接方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Jedis &lt;span class=&quot;title&quot;&gt;getJedis&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; jedisPool.getResource();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>AJAX-异步请求实现校验用户名是否存在</title>
@@ -447,28 +468,6 @@
     
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的第一篇博客--洁癖Man</title>
-    <link href="http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/"/>
-    <id>http://yoursite.com/2020/03/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2--%E6%B4%81%E7%99%96Man/</id>
-    <published>2020-03-02T03:57:25.836Z</published>
-    <updated>2020-03-22T14:11:15.772Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;​      以前在校期间用过博客园 &lt;a href=&quot;https://www.cnblogs.com/GJIN/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;洁癖Man&lt;/a&gt;，但因为没有养成良好的学习记录习惯，发表的博客不是太多，写的项目遇到的问题解决后都没有记录，而且项目还丢失了一部分。所以在github上搭建一个可以自定义，记录自己平常进步、项目与生活的一个个人博客，在记录自己的进步的同时，希望可以给他人带来一些帮助。&lt;/p&gt;
-&lt;h2 id=&quot;目前已掌握的技能&quot;&gt;&lt;a href=&quot;#目前已掌握的技能&quot; class=&quot;headerlink&quot; title=&quot;目前已掌握的技能&quot;&gt;&lt;/a&gt;目前已掌握的技能&lt;/h2&gt;&lt;h3 id=&quot;语言类&quot;&gt;&lt;a href=&quot;#语言类&quot; class=&quot;headerlink&quot; title=&quot;语言类&quot;&gt;&lt;/a&gt;语言类&lt;/h3&gt;&lt;p&gt;C、C++、Java、Python、HTML、CSS、JS；&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

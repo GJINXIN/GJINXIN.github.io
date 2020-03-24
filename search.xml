@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Redis 数据库连接池编写</title>
+    <url>/2020/03/24/Redis-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0%E7%BC%96%E5%86%99/</url>
+    <content><![CDATA[<h3 id="Utils-类编写"><a href="#Utils-类编写" class="headerlink" title="Utils 类编写"></a>Utils 类编写</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPoolUtils</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> JedisPool jedisPool;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        <span class="comment">//读取配置文件</span></span><br><span class="line">        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream("jedis.properties");</span><br><span class="line">        <span class="comment">//创建Properties对象</span></span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">//关联文件</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            pro.load(is);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取数据，设置到JedisPoolConfig中</span></span><br><span class="line">        JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">        config.setMaxTotal(Integer.parseInt(pro.getProperty(<span class="string">"maxTotal"</span>)));</span><br><span class="line">        config.setMaxIdle(Integer.parseInt(pro.getProperty(<span class="string">"maxIdle"</span>)));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化JedisPool</span></span><br><span class="line">        jedisPool = <span class="keyword">new</span> JedisPool(config,pro.getProperty(<span class="string">"host"</span>),Integer.parseInt(pro.getProperty(<span class="string">"port"</span>)));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取连接方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="获取连接池工具类"><a href="#获取连接池工具类" class="headerlink" title="获取连接池工具类"></a>获取连接池工具类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//通过连接池工具类获取</span></span><br><span class="line">   Jedis jedis = JedisPoolUtils.getJedis();</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>JAVAWeb</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AJAX-异步请求实现校验用户名是否存在</title>
     <url>/2020/03/23/AJAX-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C%E7%94%A8%E6%88%B7%E5%90%8D%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8/</url>
     <content><![CDATA[<p>在用户注册时常有验证用户名是否存在的功能，依靠异步请求刷新部分页面来实现。需要用到JQUery，以及 json 和 JAVA 对象的转换。</p>
