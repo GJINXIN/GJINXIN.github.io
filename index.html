@@ -85,6 +85,83 @@ var _hmt = _hmt || [];
     
     
     
+    <article id="post-Ajax-Redis-Mysql-实现下拉框数据加载" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"
+    >Ajax+Redis+Mysql 实现下拉框数据加载</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/" class="article-date">
+  <time datetime="2020-03-24T14:35:04.216Z" itemprop="datePublished">2020-03-24</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JAVAWeb/">JAVAWeb</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <p><img src="https://i.loli.net/2020/03/24/AKwIYqidXM5B1Jk.png" alt="Snipaste_2020-03-24_22-37-06.png"></p>
+<h3 id="Servlet-编写"><a href="#Servlet-编写" class="headerlink" title="Servlet 编写"></a>Servlet 编写</h3><p>从 service 获取返回的包含下拉框内容的 json 数据，发送到客户端。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/provinceServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProvinceServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.调用service查询</span></span><br><span class="line">        ProvinceService service = <span class="keyword">new</span> ProvinceServiceImpl();</span><br><span class="line">        String json = service.findAllJson();</span><br><span class="line"></span><br><span class="line">        System.out.println(json);</span><br><span class="line">        <span class="comment">//3.响应结果</span></span><br><span class="line">        response.setContentType(<span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">        response.getWriter().write(json);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+      <a class="article-more-link" href="/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/">阅读更多...</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-Redis-数据库连接池编写" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -748,82 +825,6 @@ var _hmt = _hmt || [];
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-Cookie获取客户端信息及响应" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/"
-    >Cookie获取客户端信息及响应</a
-  >
-</h2>
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/" class="article-date">
-  <time datetime="2020-03-16T09:18:57.757Z" itemprop="datePublished">2020-03-16</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JAVAWeb/">JAVAWeb</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <p>在用户没有登录时，cookie常用来完成服务器对客户端的省份识别及一些设置的保存。</p>
-<p>以下为一个简单的记录用户上次访问时间的功能。</p>
-      
-      <a class="article-more-link" href="/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/">阅读更多...</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cookie/" rel="tag">Cookie</a></li></ul>
 
 
     </footer>

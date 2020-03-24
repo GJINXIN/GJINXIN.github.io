@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T12:58:17.665Z</updated>
+  <updated>2020-03-24T14:37:55.923Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax+Redis+Mysql 实现下拉框数据加载</title>
+    <link href="http://yoursite.com/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/"/>
+    <id>http://yoursite.com/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/</id>
+    <published>2020-03-24T14:35:04.216Z</published>
+    <updated>2020-03-24T14:37:55.923Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/03/24/AKwIYqidXM5B1Jk.png&quot; alt=&quot;Snipaste_2020-03-24_22-37-06.png&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Servlet-编写&quot;&gt;&lt;a href=&quot;#Servlet-编写&quot; class=&quot;headerlink&quot; title=&quot;Servlet 编写&quot;&gt;&lt;/a&gt;Servlet 编写&lt;/h3&gt;&lt;p&gt;从 service 获取返回的包含下拉框内容的 json 数据，发送到客户端。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@WebServlet&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;/provinceServlet&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ProvinceServlet&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;HttpServlet&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;doPost&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(HttpServletRequest request, HttpServletResponse response)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; ServletException, IOException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//1.调用service查询&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ProvinceService service = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ProvinceServiceImpl();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String json = service.findAllJson();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(json);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//3.响应结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.setContentType(&lt;span class=&quot;string&quot;&gt;&quot;application/json;charset=utf-8&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        response.getWriter().write(json);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;doGet&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(HttpServletRequest request, HttpServletResponse response)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; ServletException, IOException &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.doPost(request, response);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
+    
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
+    
+  </entry>
   
   <entry>
     <title>Redis 数据库连接池编写</title>
@@ -444,30 +469,6 @@
       <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
     
       <category term="json" scheme="http://yoursite.com/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About me</title>
-    <link href="http://yoursite.com/2020/03/02/about/"/>
-    <id>http://yoursite.com/2020/03/02/about/</id>
-    <published>2020-03-02T06:14:39.538Z</published>
-    <updated>2020-03-12T13:02:09.905Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;|  A coder，live in Hohhot，China&lt;/p&gt;
-&lt;p&gt;姓名：郭金鑫&lt;/p&gt;
-&lt;p&gt;现居：呼和浩特&lt;/p&gt;
-&lt;p&gt;GitHub：&lt;a href=&quot;https://github.com/GJINXIN/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GJINXIN&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;QQ：1782561167&lt;/p&gt;
-&lt;p&gt;微信：gjx1782561167&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
