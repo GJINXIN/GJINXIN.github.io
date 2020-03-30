@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SpringBoot 获取配置文件中的值</title>
+    <url>/2020/03/30/SpringBoot-%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%80%BC/</url>
+    <content><![CDATA[<h3 id="配置文件处理器导入"><a href="#配置文件处理器导入" class="headerlink" title="配置文件处理器导入"></a>配置文件处理器导入</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--导入配置文件处理器，配置文件进行绑定就会有提示--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="yml-文件编写"><a href="#yml-文件编写" class="headerlink" title="yml 文件编写"></a>yml 文件编写</h3><p>注意以空格缩进，以及键值对中间空格。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">person:</span></span><br><span class="line">    <span class="attr">lastName:</span> <span class="string">xiaoming</span></span><br><span class="line">    <span class="attr">age:</span> <span class="number">18</span></span><br><span class="line">    <span class="attr">boss:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">birth:</span> <span class="number">2020</span><span class="string">/3/20</span></span><br><span class="line">    <span class="attr">maps:</span> <span class="string">&#123;k1:</span> <span class="string">v1,k2:</span> <span class="number">12</span><span class="string">,&#125;</span></span><br><span class="line">    <span class="attr">lists:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">aaa</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">bbb</span></span><br><span class="line">    <span class="attr">dog:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">buck</span></span><br><span class="line">      <span class="attr">age:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="JavaBean-编写"><a href="#JavaBean-编写" class="headerlink" title="JavaBean 编写"></a>JavaBean 编写</h3><p>将配置文件中配置的每一个属性的值，映射到这个组件中</p>
+<p>@ConfigurationProperties：告诉SpringBoot将本类中的所有属性和配置    文件中相关的配置进行绑定；</p>
+<p>prefix = “person”：配置文件中哪个下面的所有属性进行一一映射</p>
+<p>只有这个组件是容器中的组件，才能容器提供的@ConfigurationProperties功    能；</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"person"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String lastName;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> Boolean boss;</span><br><span class="line">    <span class="keyword">private</span> Date birth;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String,Object&gt; maps;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Object&gt; lists;</span><br><span class="line">    <span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>yaml</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ajax+Redis+Mysql 实现下拉框数据加载</title>
     <url>/2020/03/24/Ajax-Redis-Mysql-%E5%AE%9E%E7%8E%B0%E4%B8%8B%E6%8B%89%E6%A1%86%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD/</url>
     <content><![CDATA[<p><img src="https://i.loli.net/2020/03/24/AKwIYqidXM5B1Jk.png" alt="Snipaste_2020-03-24_22-37-06.png"></p>
@@ -21,8 +47,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
         <tag>AJAX</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
