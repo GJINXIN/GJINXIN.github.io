@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SpringBoot 简单文件上传功能实现</title>
+    <url>/2020/04/08/SpringBoot-%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</url>
+    <content><![CDATA[<h3 id="静态页面编写"><a href="#静态页面编写" class="headerlink" title="静态页面编写"></a>静态页面编写</h3><p>编码类型设置为 multipart/form-data 支持文本和文件上传，输入类型为 file</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文件上传<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/fileUploadController"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="Controller编写"><a href="#Controller编写" class="headerlink" title="Controller编写"></a>Controller编写</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileUploadController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"/fileUploadController"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">fileUpload</span><span class="params">(MultipartFile file)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(file.getOriginalFilename());</span><br><span class="line">        file.transferTo(<span class="keyword">new</span> File(<span class="string">"f:/"</span>+file.getOriginalFilename()));<span class="comment">//以文件原本名字存储在F盘</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"OK"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设定上传文件大小和上传总量"><a href="#设定上传文件大小和上传总量" class="headerlink" title="设定上传文件大小和上传总量"></a>设定上传文件大小和上传总量</h3><p>在 application.properties 中配置文件上传限制</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment">#配置单个上传文件的大小限制</span></span><br><span class="line"><span class="meta">spring.servlet.multipart.max-file-size</span>=<span class="string">2MB</span></span><br><span class="line"><span class="comment">#配置在一次请求中上传文件的总容量的限制</span></span><br><span class="line"><span class="meta">spring.servlet.multipart.max-request-size</span>=<span class="string">20MB</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>文件上传</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot 获取配置文件中的值</title>
     <url>/2020/03/30/SpringBoot-%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%80%BC/</url>
     <content><![CDATA[<h3 id="配置文件处理器导入"><a href="#配置文件处理器导入" class="headerlink" title="配置文件处理器导入"></a>配置文件处理器导入</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--导入配置文件处理器，配置文件进行绑定就会有提示--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -47,8 +68,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>AJAX</tag>
         <tag>Redis</tag>
+        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
