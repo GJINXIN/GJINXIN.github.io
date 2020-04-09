@@ -3,7 +3,7 @@
   <entry>
     <title>SpringBoot 整合Jdbc获取配置文件数据源的两种方式</title>
     <url>/2020/04/09/SpringBoot-%E6%95%B4%E5%90%88Jdbc%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="1、application-properties"><a href="#1、application-properties" class="headerlink" title="1、application.properties"></a>1、application.properties</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h3 id="一、通过-Configuration注解获取"><a href="#一、通过-Configuration注解获取" class="headerlink" title="一、通过@Configuration注解获取"></a>一、通过@Configuration注解获取</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><h4 id="1、application-properties"><a href="#1、application-properties" class="headerlink" title="1、application.properties"></a>1、application.properties</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -16,12 +16,18 @@
 
 
 
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>只需要配置类编写，不需要实体类</p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>只需要配置类编写，不需要实体类</p>
 <h4 id="1、application-properties-1"><a href="#1、application-properties-1" class="headerlink" title="1、application.properties"></a>1、application.properties</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
 
 
 
 <h4 id="2、创建配置类"><a href="#2、创建配置类" class="headerlink" title="2、创建配置类"></a>2、创建配置类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"jdbc"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">getDataSource</span><span class="params">()</span></span>&#123;</span><br><span class="line">        DruidDataSource source = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        <span class="keyword">return</span> source;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="二、通过配置文件配置数据源"><a href="#二、通过配置文件配置数据源" class="headerlink" title="二、通过配置文件配置数据源"></a>二、通过配置文件配置数据源</h3><h4 id="方法一：使用HikariDataSource-数据源"><a href="#方法一：使用HikariDataSource-数据源" class="headerlink" title="方法一：使用HikariDataSource 数据源"></a>方法一：使用HikariDataSource 数据源</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方法二：使用Druid数据源"><a href="#方法二：使用Druid数据源" class="headerlink" title="方法二：使用Druid数据源"></a>方法二：使用Druid数据源</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql:///day17?useSSL=false</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">66634</span></span><br><span class="line"><span class="meta">spring.datasource.type</span>=<span class="string">com.alibaba.druid.pool.DruidDataSource</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -99,8 +105,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
         <tag>AJAX</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
