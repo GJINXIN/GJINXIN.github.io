@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-08T08:47:24.740Z</updated>
+  <updated>2020-04-09T06:57:18.799Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot 整合Jdbc获取配置文件数据源的两种方式</title>
+    <link href="http://yoursite.com/2020/04/09/SpringBoot-%E6%95%B4%E5%90%88Jdbc%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2020/04/09/SpringBoot-%E6%95%B4%E5%90%88Jdbc%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</id>
+    <published>2020-04-09T06:56:17.688Z</published>
+    <updated>2020-04-09T06:57:18.799Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一&quot;&gt;&lt;/a&gt;方法一&lt;/h3&gt;&lt;h4 id=&quot;1、application-properties&quot;&gt;&lt;a href=&quot;#1、application-properties&quot; class=&quot;headerlink&quot; title=&quot;1、application.properties&quot;&gt;&lt;/a&gt;1、application.properties&lt;/h4&gt;&lt;figure class=&quot;highlight properties&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;jdbc.driverClassName&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;com.mysql.cj.jdbc.Driver&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;jdbc.url&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;jdbc:mysql:///xxx&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;jdbc.username&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;root&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;jdbc.password&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;root&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+&lt;h4 id=&quot;2、创建实体类&quot;&gt;&lt;a href=&quot;#2、创建实体类&quot; class=&quot;headerlink&quot; title=&quot;2、创建实体类&quot;&gt;&lt;/a&gt;2、创建实体类&lt;/h4&gt;&lt;p&gt;并生成 getter 和 setter 方法&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;JdbcProperties&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String driverClassName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String url;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String username;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String password;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/categories/SpringBoot/"/>
+    
+    
+      <category term="Jdbc" scheme="http://yoursite.com/tags/Jdbc/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot 简单文件上传功能实现</title>
@@ -441,34 +467,6 @@
       <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
     
       <category term="Druid" scheme="http://yoursite.com/tags/Druid/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JDBC-sql注入的安全性问题</title>
-    <link href="http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2020/03/06/JDBC-sql%E6%B3%A8%E5%85%A5%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98/</id>
-    <published>2020-03-06T10:57:24.117Z</published>
-    <updated>2020-03-12T13:01:16.771Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;sql注入的安全性问题&quot;&gt;&lt;a href=&quot;#sql注入的安全性问题&quot; class=&quot;headerlink&quot; title=&quot;sql注入的安全性问题&quot;&gt;&lt;/a&gt;sql注入的安全性问题&lt;/h3&gt;&lt;p&gt;在使用 Statement 类执行 sql 对象时，拼接的 sql 语句可能会有特殊关键子参与字符串拼接，造成数据库信息泄露等问题。&lt;/p&gt;
-&lt;p&gt;使用 Statement 类的 sql 语句格式：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;String sql = &lt;span class=&quot;string&quot;&gt;&quot;select *from admin where name = &#39;&quot;&lt;/span&gt;+username+&lt;span class=&quot;string&quot;&gt;&quot;&#39; and password = &#39;&quot;&lt;/span&gt;+password+&lt;span class=&quot;string&quot;&gt;&quot;&#39;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;当遇到 sql 注入语句：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;请输入用户名:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;abcdefg&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;请输入密码：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s&lt;span class=&quot;string&quot;&gt;&#39; or &#39;&lt;/span&gt;a&lt;span class=&quot;string&quot;&gt;&#39; = &#39;&lt;/span&gt;a&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select * from user where username = &lt;span class=&quot;string&quot;&gt;&#39;abcdefg&#39;&lt;/span&gt; and password = &lt;span class=&quot;string&quot;&gt;&#39;s&#39;&lt;/span&gt; or &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;登录成功！&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="JDBC" scheme="http://yoursite.com/tags/JDBC/"/>
-    
-      <category term="sql" scheme="http://yoursite.com/tags/sql/"/>
     
   </entry>
   

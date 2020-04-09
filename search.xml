@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>SpringBoot 整合Jdbc获取配置文件数据源的两种方式</title>
+    <url>/2020/04/09/SpringBoot-%E6%95%B4%E5%90%88Jdbc%E8%8E%B7%E5%8F%96%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%E6%BA%90%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="1、application-properties"><a href="#1、application-properties" class="headerlink" title="1、application.properties"></a>1、application.properties</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、创建实体类"><a href="#2、创建实体类" class="headerlink" title="2、创建实体类"></a>2、创建实体类</h4><p>并生成 getter 和 setter 方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="3、创建配置类"><a href="#3、创建配置类" class="headerlink" title="3、创建配置类"></a>3、创建配置类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties</span>(JdbcProperties<span class="class">.<span class="keyword">class</span>)//指定加载哪个配置属性类</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">JdbcConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">getDataSource</span><span class="params">(JdbcProperties jdbcProperties)</span></span>&#123;</span><br><span class="line">        DruidDataSource source = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        source.setDriverClassName(jdbcProperties.getDriverClassName());</span><br><span class="line">        source.setUrl(jdbcProperties.getUrl());</span><br><span class="line">        source.setUsername(jdbcProperties.getUsername());</span><br><span class="line">        source.setPassword(jdbcProperties.getPassword());</span><br><span class="line">        <span class="keyword">return</span> source;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>只需要配置类编写，不需要实体类</p>
+<h4 id="1、application-properties-1"><a href="#1、application-properties-1" class="headerlink" title="1、application.properties"></a>1、application.properties</h4><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql:///xxx</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">root</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2、创建配置类"><a href="#2、创建配置类" class="headerlink" title="2、创建配置类"></a>2、创建配置类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcConfiguration</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"jdbc"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">getDataSource</span><span class="params">()</span></span>&#123;</span><br><span class="line">        DruidDataSource source = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">        <span class="keyword">return</span> source;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>Jdbc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot 简单文件上传功能实现</title>
     <url>/2020/04/08/SpringBoot-%E7%AE%80%E5%8D%95%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h3 id="静态页面编写"><a href="#静态页面编写" class="headerlink" title="静态页面编写"></a>静态页面编写</h3><p>编码类型设置为 multipart/form-data 支持文本和文件上传，输入类型为 file</p>
