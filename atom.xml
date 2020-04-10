@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-10T04:46:39.535Z</updated>
+  <updated>2020-04-10T04:48:45.982Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,12 @@
     <link href="http://yoursite.com/2020/04/10/SpringBoot%E5%9F%BA%E4%BA%8EMybatis%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
     <id>http://yoursite.com/2020/04/10/SpringBoot%E5%9F%BA%E4%BA%8EMybatis%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
     <published>2020-04-10T04:45:26.201Z</published>
-    <updated>2020-04-10T04:46:39.535Z</updated>
+    <updated>2020-04-10T04:48:45.982Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h4 id=&quot;一、使用-generator-插件生成-pojo-和-mapper&quot;&gt;&lt;a href=&quot;#一、使用-generator-插件生成-pojo-和-mapper&quot; class=&quot;headerlink&quot; title=&quot;一、使用 generator 插件生成 pojo
-        
-      
+      &lt;h4 id=&quot;一、使用-generator-插件生成-pojo-和-mapper&quot;&gt;&lt;a href=&quot;#一、使用-generator-插件生成-pojo-和-mapper&quot; class=&quot;headerlink&quot; title=&quot;一、使用 generator 插件生成 pojo 和 mapper&quot;&gt;&lt;/a&gt;一、使用 generator 插件生成 pojo 和 mapper&lt;/h4&gt;&lt;p&gt;参考：&lt;a href=&quot;https://nfreak-man.cn/2020/04/09/Mybatis配置generator插件/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mybatis配置generator插件&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;二、Controller编写&quot;&gt;&lt;a href=&quot;#二、Controller编写&quot; class=&quot;headerlink&quot; title=&quot;二、Controller编写&quot;&gt;&lt;/a&gt;二、Controller编写&lt;/h4&gt;&lt;h4 id=&quot;1、页面跳转方法&quot;&gt;&lt;a href=&quot;#1、页面跳转方法&quot; class=&quot;headerlink&quot; title=&quot;1、页面跳转方法&quot;&gt;&lt;/a&gt;1、页面跳转方法&lt;/h4&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Controller&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PageController&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//页面跳转方法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@RequestMapping&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;/&amp;#123;page&amp;#125;&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;showPage&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(@PathVariable String page)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; page;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
