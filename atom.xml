@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-12T03:30:30.134Z</updated>
+  <updated>2020-04-12T09:37:01.271Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue+Axios 实现天气查询</title>
+    <link href="http://yoursite.com/2020/04/12/Vue-Axios-%E5%AE%9E%E7%8E%B0%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://yoursite.com/2020/04/12/Vue-Axios-%E5%AE%9E%E7%8E%B0%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2/</id>
+    <published>2020-04-12T09:37:01.000Z</published>
+    <updated>2020-04-12T09:37:01.271Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Vue+BootStrap实现简单网页记事本</title>
@@ -446,36 +461,6 @@
     
     
       <category term="Cookie" scheme="http://yoursite.com/tags/Cookie/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JAVAWeb文件下载功能</title>
-    <link href="http://yoursite.com/2020/03/14/JAVAWeb%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/"/>
-    <id>http://yoursite.com/2020/03/14/JAVAWeb%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</id>
-    <published>2020-03-14T12:33:41.410Z</published>
-    <updated>2020-03-14T12:35:57.677Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;编写html页面，编辑超链接 href 属性，指向Servlet并传递要下载的文件名及格式&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Servlet：*获取文件名称&lt;/p&gt;
-&lt;p&gt;​                *使用字节输入流加载文件进内存&lt;/p&gt;
-&lt;p&gt;​                *指定 response 的响应头：content-disposition:attachmement;filename=xxx&lt;/p&gt;
-&lt;p&gt;​                *将数据写出到 response 输出流&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;html-a标签格式&quot;&gt;&lt;a href=&quot;#html-a标签格式&quot; class=&quot;headerlink&quot; title=&quot;html a标签格式&quot;&gt;&lt;/a&gt;html a标签格式&lt;/h3&gt;&lt;p&gt; href=”/day15/downloadServlet?filename=鬼刀.png”&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="文件下载" scheme="http://yoursite.com/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   

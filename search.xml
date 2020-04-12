@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vue+Axios 实现天气查询</title>
+    <url>/2020/04/12/Vue-Axios-%E5%AE%9E%E7%8E%B0%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Vue+BootStrap实现简单网页记事本</title>
     <url>/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/</url>
     <content><![CDATA[<h4 id="一、页面展示"><a href="#一、页面展示" class="headerlink" title="一、页面展示"></a>一、页面展示</h4><p>初始页面：</p>
