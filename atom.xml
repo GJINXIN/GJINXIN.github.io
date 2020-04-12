@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-10T04:48:45.982Z</updated>
+  <updated>2020-04-12T03:30:30.134Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue+BootStrap实现简单网页记事本</title>
+    <link href="http://yoursite.com/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/"/>
+    <id>http://yoursite.com/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/</id>
+    <published>2020-04-12T03:29:04.098Z</published>
+    <updated>2020-04-12T03:30:30.134Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一、页面展示&quot;&gt;&lt;a href=&quot;#一、页面展示&quot; class=&quot;headerlink&quot; title=&quot;一、页面展示&quot;&gt;&lt;/a&gt;一、页面展示&lt;/h4&gt;&lt;p&gt;初始页面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/12/41hjnOzwTRXatcI.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;记录后页面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/12/nNXqw8BjpPtuL4l.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网页" scheme="http://yoursite.com/categories/%E7%BD%91%E9%A1%B5/"/>
+    
+    
+      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot-基于Mybatis实现增删改查</title>
@@ -202,9 +226,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
   </entry>
   
@@ -452,27 +476,6 @@
     
     
       <category term="文件下载" scheme="http://yoursite.com/tags/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单的验证码实现逻辑及点击切换</title>
-    <link href="http://yoursite.com/2020/03/13/%E7%AE%80%E5%8D%95%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2/"/>
-    <id>http://yoursite.com/2020/03/13/%E7%AE%80%E5%8D%95%E7%9A%84%E9%AA%8C%E8%AF%81%E7%A0%81%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%8F%8A%E7%82%B9%E5%87%BB%E5%88%87%E6%8D%A2/</id>
-    <published>2020-03-13T14:03:05.987Z</published>
-    <updated>2020-03-13T14:05:09.698Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为了防止恶意表单注册，注册界面都会加上验证码功能。服务器会在内存生成验证码图片，并显示随机内容到网页，并且要防止智能识别。具体代码如下：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="验证码" scheme="http://yoursite.com/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/"/>
     
   </entry>
   

@@ -85,6 +85,84 @@ var _hmt = _hmt || [];
     
     
     
+    <article id="post-Vue-BootStrap实现简单网页记事本" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/"
+    >Vue+BootStrap实现简单网页记事本</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/" class="article-date">
+  <time datetime="2020-04-12T03:29:04.098Z" itemprop="datePublished">2020-04-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E9%A1%B5/">网页</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h4 id="一、页面展示"><a href="#一、页面展示" class="headerlink" title="一、页面展示"></a>一、页面展示</h4><p>初始页面：</p>
+<p><img src="https://i.loli.net/2020/04/12/41hjnOzwTRXatcI.png" alt="image.png"></p>
+<p>记录后页面：</p>
+<p><img src="https://i.loli.net/2020/04/12/nNXqw8BjpPtuL4l.png" alt="image.png"></p>
+      
+      <a class="article-more-link" href="/2020/04/12/Vue-BootStrap%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%BD%91%E9%A1%B5%E8%AE%B0%E4%BA%8B%E6%9C%AC/">阅读更多...</a>
+      
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-SpringBoot基于Mybatis实现增删改查" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -765,83 +843,6 @@ var _hmt = _hmt || [];
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-AJAX-异步请求实现校验用户名是否存在" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/03/23/AJAX-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C%E7%94%A8%E6%88%B7%E5%90%8D%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8/"
-    >AJAX-异步请求实现校验用户名是否存在</a
-  >
-</h2>
-  
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/03/23/AJAX-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C%E7%94%A8%E6%88%B7%E5%90%8D%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8/" class="article-date">
-  <time datetime="2020-03-23T08:58:35.989Z" itemprop="datePublished">2020-03-23</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JAVAWeb/">JAVAWeb</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-
-      
-
-      
-      <p>在用户注册时常有验证用户名是否存在的功能，依靠异步请求刷新部分页面来实现。需要用到JQUery，以及 json 和 JAVA 对象的转换。</p>
-<p><img src="https://i.loli.net/2020/03/23/RFByUK9ZYEJVfOa.png" alt="Snipaste_2020-03-23_16-55-12.png"></p>
-<h3 id="前端页面编写"><a href="#前端页面编写" class="headerlink" title="前端页面编写"></a>前端页面编写</h3><p>焦点离开用户名框后，会自动提交输入框内容到服务器，发送 ajax 请求，解析服务器返回 json 如果 userExsit 为true，则显示用户名已存在，为 false 则显示用户名可用。</p>
-      
-      <a class="article-more-link" href="/2020/03/23/AJAX-%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%AE%9E%E7%8E%B0%E6%A0%A1%E9%AA%8C%E7%94%A8%E6%88%B7%E5%90%8D%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8/">阅读更多...</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AJAX/" rel="tag">AJAX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JQuery/" rel="tag">JQuery</a></li></ul>
 
 
     </footer>
