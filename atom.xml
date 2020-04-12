@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-12T09:40:16.121Z</updated>
+  <updated>2020-04-12T09:42:08.152Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,14 @@
     <link href="http://yoursite.com/2020/04/12/Vue-Axios-%E5%AE%9E%E7%8E%B0%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2/"/>
     <id>http://yoursite.com/2020/04/12/Vue-Axios-%E5%AE%9E%E7%8E%B0%E5%A4%A9%E6%B0%94%E6%9F%A5%E8%AF%A2/</id>
     <published>2020-04-12T09:37:01.271Z</published>
-    <updated>2020-04-12T09:40:16.121Z</updated>
+    <updated>2020-04-12T09:42:08.152Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h4 id=&quot;一、页面展示&quot;&gt;&lt;a href=&quot;#一、页面展示&quot; class=&quot;headerlink&quot; title=&quot;一、页面展示&quot;&gt;&lt;/a&gt;一、页面展示&lt;/h4&gt;&lt;p&gt;初始页面：&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
+      &lt;h4 id=&quot;一、页面展示&quot;&gt;&lt;a href=&quot;#一、页面展示&quot; class=&quot;headerlink&quot; title=&quot;一、页面展示&quot;&gt;&lt;/a&gt;一、页面展示&lt;/h4&gt;&lt;p&gt;初始页面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/12/41hjnOzwTRXatcI.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;记录后页面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/12/nNXqw8BjpPtuL4l.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -254,9 +250,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
       <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
     
   </entry>
   
