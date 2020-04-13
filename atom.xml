@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-12T09:44:29.168Z</updated>
+  <updated>2020-04-13T03:58:13.547Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue-网页版音乐播放器实现（网易云音乐源）</title>
+    <link href="http://yoursite.com/2020/04/13/Vue-%E7%BD%91%E9%A1%B5%E7%89%88%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0%EF%BC%88%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%BA%90%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/04/13/Vue-%E7%BD%91%E9%A1%B5%E7%89%88%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E5%AE%9E%E7%8E%B0%EF%BC%88%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%BA%90%EF%BC%89/</id>
+    <published>2020-04-13T03:56:54.864Z</published>
+    <updated>2020-04-13T03:58:13.547Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一、页面展示（后续还会完善功能）&quot;&gt;&lt;a href=&quot;#一、页面展示（后续还会完善功能）&quot; class=&quot;headerlink&quot; title=&quot;一、页面展示（后续还会完善功能）&quot;&gt;&lt;/a&gt;一、页面展示（后续还会完善功能）&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/04/13/8N6BZenUV4KPxfL.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;二、已完成功能&quot;&gt;&lt;a href=&quot;#二、已完成功能&quot; class=&quot;headerlink&quot; title=&quot;二、已完成功能&quot;&gt;&lt;/a&gt;二、已完成功能&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1、搜索功能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、音乐列表展示&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、歌曲图片展示和图片背景虚化效果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、音乐播放动态效果&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5、音乐暂停以及上下首切换&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6、音乐时长获取及格式化&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网页" scheme="http://yoursite.com/categories/%E7%BD%91%E9%A1%B5/"/>
+    
+    
+      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue+Axios 实现天气查询</title>
@@ -250,9 +277,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
   </entry>
   
@@ -448,28 +475,6 @@
     
     
       <category term="session" scheme="http://yoursite.com/tags/session/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cookie获取客户端信息及响应</title>
-    <link href="http://yoursite.com/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/"/>
-    <id>http://yoursite.com/2020/03/16/Cookie%E8%8E%B7%E5%8F%96%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%93%8D%E5%BA%94/</id>
-    <published>2020-03-16T09:18:57.757Z</published>
-    <updated>2020-03-16T09:19:58.471Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在用户没有登录时，cookie常用来完成服务器对客户端的省份识别及一些设置的保存。&lt;/p&gt;
-&lt;p&gt;以下为一个简单的记录用户上次访问时间的功能。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="Cookie" scheme="http://yoursite.com/tags/Cookie/"/>
     
   </entry>
   
