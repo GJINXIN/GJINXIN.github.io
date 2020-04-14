@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-13T04:03:48.063Z</updated>
+  <updated>2020-04-14T08:29:39.597Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anaconda 与 Tensorflow 安装及配置问题及解决</title>
+    <link href="http://yoursite.com/2020/04/14/Anaconda-%E4%B8%8E-Tensorflow-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/"/>
+    <id>http://yoursite.com/2020/04/14/Anaconda-%E4%B8%8E-Tensorflow-%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3/</id>
+    <published>2020-04-14T08:28:09.137Z</published>
+    <updated>2020-04-14T08:29:39.597Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一、Anaconda配置&quot;&gt;&lt;a href=&quot;#一、Anaconda配置&quot; class=&quot;headerlink&quot; title=&quot;一、Anaconda配置&quot;&gt;&lt;/a&gt;一、Anaconda配置&lt;/h4&gt;&lt;h4 id=&quot;1、安装&quot;&gt;&lt;a href=&quot;#1、安装&quot; class=&quot;headerlink&quot; title=&quot;1、安装&quot;&gt;&lt;/a&gt;1、安装&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.anaconda.com/&lt;/a&gt; 官网下载安装包安装即可。&lt;/p&gt;
+&lt;h4 id=&quot;2、Jupyter-Notebook默认工作路径配置&quot;&gt;&lt;a href=&quot;#2、Jupyter-Notebook默认工作路径配置&quot; class=&quot;headerlink&quot; title=&quot;2、Jupyter Notebook默认工作路径配置&quot;&gt;&lt;/a&gt;2、Jupyter Notebook默认工作路径配置&lt;/h4&gt;&lt;p&gt;​    （1）打开 Anaconda Prompt，运行下面命令，会生成 jupyter_notebook_config.py文件&lt;/p&gt;
+&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jupyter notebook --generate-&lt;span class=&quot;built_in&quot;&gt;config&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;​    （2）在生成的位置：C:\Users\用户名.jupyter\ 下找到文件打开&lt;/p&gt;
+&lt;p&gt;​    （3）找到 c.NotebookApp.notebook_dir 变量，去掉注释修改为&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;c.NotebookApp.notebook_dir = &lt;span class=&quot;string&quot;&gt;&#39;自定义路径&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Tensorflow" scheme="http://yoursite.com/tags/Tensorflow/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue-网页版音乐播放器实现（网易云音乐源）</title>
@@ -454,27 +481,6 @@
     
     
       <category term="web列表批量删除" scheme="http://yoursite.com/tags/web%E5%88%97%E8%A1%A8%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Session-判断用户登陆验证码是否正确</title>
-    <link href="http://yoursite.com/2020/03/16/Session-%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE/"/>
-    <id>http://yoursite.com/2020/03/16/Session-%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE/</id>
-    <published>2020-03-16T13:05:21.254Z</published>
-    <updated>2020-03-16T13:07:04.786Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;验证码为随机生成，服务器从 session 获取验证码，并和用户输入的验证码进行比对，结果通过 requesrt 转发到 success.jsp 和 login.jsp&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="session" scheme="http://yoursite.com/tags/session/"/>
     
   </entry>
   
