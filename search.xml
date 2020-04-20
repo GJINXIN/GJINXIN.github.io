@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>机器学习-字典、文字特征提取</title>
+    <url>/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%AD%97%E5%85%B8%E3%80%81%E6%96%87%E5%AD%97%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/</url>
+    <content><![CDATA[<h4 id="一、字典特征提取"><a href="#一、字典特征提取" class="headerlink" title="一、字典特征提取"></a>一、字典特征提取</h4><p><strong>1、导入包</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dict_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#字典特征提取</span></span><br><span class="line">    data = [&#123;<span class="string">'city'</span>:<span class="string">'北京'</span>,<span class="string">'temperature'</span>:<span class="number">100</span>&#125;,&#123;<span class="string">'city'</span>:<span class="string">'上海'</span>,<span class="string">'temperature'</span>:<span class="number">60</span>&#125;,&#123;<span class="string">'city'</span>:<span class="string">'深圳'</span>,<span class="string">'temperature'</span>:<span class="number">30</span>&#125;]</span><br><span class="line">    <span class="comment">#1、实例化一个转换器类</span></span><br><span class="line">    transfer = DictVectorizer(sparse=<span class="literal">False</span>) <span class="comment">#显示为全矩阵</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#2、调用fit_transform()</span></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_new)</span><br><span class="line">    print(<span class="string">"特征名字：\n"</span>,transfer.get_feature_names())</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[  0.   1.   0. 100.]</span><br><span class="line"> [  1.   0.   0.  60.]</span><br><span class="line"> [  0.   0.   1.  30.]]</span><br><span class="line">特征名字：</span><br><span class="line"> [&#39;city&#x3D;上海&#39;, &#39;city&#x3D;北京&#39;, &#39;city&#x3D;深圳&#39;, &#39;temperature&#39;]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="二、文字特征提取"><a href="#二、文字特征提取" class="headerlink" title="二、文字特征提取"></a>二、文字特征提取</h4><h5 id="Countvectorizer提取"><a href="#Countvectorizer提取" class="headerlink" title="Countvectorizer提取"></a>Countvectorizer提取</h5><p>统计每个样本特征词出现的个数</p>
+<p><strong>1、导入包</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">import</span> jieba</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<p>英文分词：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#文本特征抽取</span></span><br><span class="line">    data = [<span class="string">"Life is short, i like python"</span>, <span class="string">"Flife is too Long, i dislike python"</span>]</span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = CountVectorizer(stop_words=[<span class="string">"is"</span>,<span class="string">"too"</span>])</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_new.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p>中文 jieba 分词：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_Chinese_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#中文文本特征抽取，自动分词</span></span><br><span class="line">    <span class="comment">#1、将中文文本进行分词</span></span><br><span class="line">    data = [<span class="string">"今天很残酷,明天更残酷,后天很美好,但绝对大部分是死在明天晚上,所以每个人不要放弃今天。"</span>,</span><br><span class="line">            <span class="string">"我们看到的从很远星系来的光是在几百万年之前发出的这样当我们看到宇宙时,我们是套看它的过去"</span>,</span><br><span class="line">            <span class="string">"如果只用一种方式了解某样事物,你就不会真正了解它。了解事物真正含义的秘密取决于如何将其与我们所了解的事物相联系"</span>]</span><br><span class="line">    data_new = []</span><br><span class="line">    <span class="keyword">for</span> sent <span class="keyword">in</span> data:</span><br><span class="line">        data_new.append(cut_word(sent))</span><br><span class="line">    <span class="comment"># print(data_new)</span></span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = CountVectorizer()</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_final = transfer.fit_transform(data_new)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_final.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_word</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment">#进行中文分词</span></span><br><span class="line">    text = <span class="string">" "</span>.join(list(jieba.cut(text))) </span><br><span class="line">    <span class="keyword">return</span> text</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[0 0 1 1 0 1 1]</span><br><span class="line"> [1 1 0 0 1 1 0]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;dislike&#39;, &#39;flife&#39;, &#39;life&#39;, &#39;like&#39;, &#39;long&#39;, &#39;python&#39;, &#39;short&#39;]</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">data_new:</span><br><span class="line"> [[0 0 1 0 0 0 2 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 2 0 1 0 2 1 0 0 0 1 1 0 0 0]</span><br><span class="line"> [0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 1 3 0 0 0 0 1 0 0 0 0 2 0 0 0 0 0 1 1]</span><br><span class="line"> [1 1 0 0 4 3 0 0 0 0 1 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 0 2 1 0 0 1 0 0]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;一种&#39;, &#39;不会&#39;, &#39;不要&#39;, &#39;之前&#39;, &#39;了解&#39;, &#39;事物&#39;, &#39;今天&#39;, &#39;光是在&#39;, &#39;几百万年&#39;, &#39;发出&#39;, &#39;取决于&#39;, &#39;只用&#39;, &#39;后天&#39;, &#39;含义&#39;, &#39;大部分&#39;, &#39;如何&#39;, &#39;如果&#39;, &#39;宇宙&#39;, &#39;我们&#39;, &#39;所以&#39;, &#39;放弃&#39;, &#39;方式&#39;, &#39;明天&#39;, &#39;星系&#39;, &#39;晚上&#39;, &#39;某样&#39;, &#39;残酷&#39;, &#39;每个&#39;, &#39;看到&#39;, &#39;真正&#39;, &#39;秘密&#39;, &#39;绝对&#39;, &#39;美好&#39;, &#39;联系&#39;, &#39;过去&#39;, &#39;这样&#39;]</span><br></pre></td></tr></table></figure>
+
+<h5 id="TfidfVectorizer提取"><a href="#TfidfVectorizer提取" class="headerlink" title="TfidfVectorizer提取"></a>TfidfVectorizer提取</h5><p>用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度</p>
+<p><strong>1、导入包</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">from sklearn.feature_extraction.text import TfidfVectorizer</span><br><span class="line">import jieba</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tfidf_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#用TF-IDF的方法进行文本特征抽取</span></span><br><span class="line">    <span class="comment">#1、将中文文本进行分词</span></span><br><span class="line">    data = [<span class="string">"今天很残酷,明天更残酷,后天很美好,但绝对大部分是死在明天晚上,所以每个人不要放弃今天。"</span>,</span><br><span class="line">            <span class="string">"我们看到的从很远星系来的光是在几百万年之前发出的这样当我们看到宇宙时,我们是套看它的过去"</span>,</span><br><span class="line">            <span class="string">"如果只用一种方式了解某样事物,你就不会真正了解它。了解事物真正含义的秘密取决于如何将其与我们所了解的事物相联系"</span>]</span><br><span class="line">    data_new = []</span><br><span class="line">    <span class="keyword">for</span> sent <span class="keyword">in</span> data:</span><br><span class="line">        data_new.append(cut_word(sent))</span><br><span class="line">    <span class="comment"># print(data_new)</span></span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = TfidfVectorizer()</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_final = transfer.fit_transform(data_new)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_final.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_word</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment">#进行中文分词</span></span><br><span class="line">    text = <span class="string">" "</span>.join(list(jieba.cut(text))) </span><br><span class="line">    <span class="keyword">return</span> text</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[0.         0.         0.21821789 0.         0.         0.</span><br><span class="line">  0.43643578 0.         0.         0.         0.         0.</span><br><span class="line">  0.21821789 0.         0.21821789 0.         0.         0.</span><br><span class="line">  0.         0.21821789 0.21821789 0.         0.43643578 0.</span><br><span class="line">  0.21821789 0.         0.43643578 0.21821789 0.         0.</span><br><span class="line">  0.         0.21821789 0.21821789 0.         0.         0.        ]</span><br><span class="line"> [0.         0.         0.         0.2410822  0.         0.</span><br><span class="line">  0.         0.2410822  0.2410822  0.2410822  0.         0.</span><br><span class="line">  0.         0.         0.         0.         0.         0.2410822</span><br><span class="line">  0.55004769 0.         0.         0.         0.         0.2410822</span><br><span class="line">  0.         0.         0.         0.         0.48216441 0.</span><br><span class="line">  0.         0.         0.         0.         0.2410822  0.2410822 ]</span><br><span class="line"> [0.15698297 0.15698297 0.         0.         0.62793188 0.47094891</span><br><span class="line">  0.         0.         0.         0.         0.15698297 0.15698297</span><br><span class="line">  0.         0.15698297 0.         0.15698297 0.15698297 0.</span><br><span class="line">  0.1193896  0.         0.         0.15698297 0.         0.</span><br><span class="line">  0.         0.15698297 0.         0.         0.         0.31396594</span><br><span class="line">  0.15698297 0.         0.         0.15698297 0.         0.        ]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;一种&#39;, &#39;不会&#39;, &#39;不要&#39;, &#39;之前&#39;, &#39;了解&#39;, &#39;事物&#39;, &#39;今天&#39;, &#39;光是在&#39;, &#39;几百万年&#39;, &#39;发出&#39;, &#39;取决于&#39;, &#39;只用&#39;, &#39;后天&#39;, &#39;含义&#39;, &#39;大部分&#39;, &#39;如何&#39;, &#39;如果&#39;, &#39;宇宙&#39;, &#39;我们&#39;, &#39;所以&#39;, &#39;放弃&#39;, &#39;方式&#39;, &#39;明天&#39;, &#39;星系&#39;, &#39;晚上&#39;, &#39;某样&#39;, &#39;残酷&#39;, &#39;每个&#39;, &#39;看到&#39;, &#39;真正&#39;, &#39;秘密&#39;, &#39;绝对&#39;, &#39;美好&#39;, &#39;联系&#39;, &#39;过去&#39;, &#39;这样&#39;]</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>特征提取</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-线性回归模型示例</title>
     <url>/2020/04/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%A4%BA%E4%BE%8B/</url>
     <content><![CDATA[<h3 id="一、拟合效果"><a href="#一、拟合效果" class="headerlink" title="一、拟合效果"></a>一、拟合效果</h3><p><img src="https://i.loli.net/2020/04/17/PCknW7mZlSNbycq.png" alt="image.png"></p>
@@ -10,7 +56,7 @@
 
 ]]></content>
       <categories>
-        <category>深度学习</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>线性回归</tag>
@@ -40,7 +86,7 @@
 
 ]]></content>
       <categories>
-        <category>深度学习</category>
+        <category>机器学习</category>
       </categories>
       <tags>
         <tag>Tensorflow</tag>

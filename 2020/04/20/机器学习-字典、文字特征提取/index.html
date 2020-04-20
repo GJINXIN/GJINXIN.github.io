@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="思考，代码，旅行，博客" />
+   
+  <meta name="description" content="Poor clean Man" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    机器学习-字典、文字特征提取 |  洁癖Man
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?632c73f486d0bcbca3d5902fbc6e5357";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="alternate" href="/atom.xml" title="洁癖Man" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <section class="outer">
+  <article id="post-机器学习-字典、文字特征提取" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  机器学习-字典、文字特征提取
+</h1>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%AD%97%E5%85%B8%E3%80%81%E6%96%87%E5%AD%97%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/" class="article-date">
+  <time datetime="2020-04-20T09:09:58.736Z" itemprop="datePublished">2020-04-20</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.3k字</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">6分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h4 id="一、字典特征提取"><a href="#一、字典特征提取" class="headerlink" title="一、字典特征提取"></a>一、字典特征提取</h4><p><strong>1、导入包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dict_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#字典特征提取</span></span><br><span class="line">    data = [&#123;<span class="string">'city'</span>:<span class="string">'北京'</span>,<span class="string">'temperature'</span>:<span class="number">100</span>&#125;,&#123;<span class="string">'city'</span>:<span class="string">'上海'</span>,<span class="string">'temperature'</span>:<span class="number">60</span>&#125;,&#123;<span class="string">'city'</span>:<span class="string">'深圳'</span>,<span class="string">'temperature'</span>:<span class="number">30</span>&#125;]</span><br><span class="line">    <span class="comment">#1、实例化一个转换器类</span></span><br><span class="line">    transfer = DictVectorizer(sparse=<span class="literal">False</span>) <span class="comment">#显示为全矩阵</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#2、调用fit_transform()</span></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_new)</span><br><span class="line">    print(<span class="string">"特征名字：\n"</span>,transfer.get_feature_names())</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[  0.   1.   0. 100.]</span><br><span class="line"> [  1.   0.   0.  60.]</span><br><span class="line"> [  0.   0.   1.  30.]]</span><br><span class="line">特征名字：</span><br><span class="line"> [&#39;city&#x3D;上海&#39;, &#39;city&#x3D;北京&#39;, &#39;city&#x3D;深圳&#39;, &#39;temperature&#39;]</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h4 id="二、文字特征提取"><a href="#二、文字特征提取" class="headerlink" title="二、文字特征提取"></a>二、文字特征提取</h4><h5 id="Countvectorizer提取"><a href="#Countvectorizer提取" class="headerlink" title="Countvectorizer提取"></a>Countvectorizer提取</h5><p>统计每个样本特征词出现的个数</p>
+<p><strong>1、导入包</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">import</span> jieba</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<p>英文分词：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#文本特征抽取</span></span><br><span class="line">    data = [<span class="string">"Life is short, i like python"</span>, <span class="string">"Flife is too Long, i dislike python"</span>]</span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = CountVectorizer(stop_words=[<span class="string">"is"</span>,<span class="string">"too"</span>])</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_new.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p>中文 jieba 分词：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_Chinese_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#中文文本特征抽取，自动分词</span></span><br><span class="line">    <span class="comment">#1、将中文文本进行分词</span></span><br><span class="line">    data = [<span class="string">"今天很残酷,明天更残酷,后天很美好,但绝对大部分是死在明天晚上,所以每个人不要放弃今天。"</span>,</span><br><span class="line">            <span class="string">"我们看到的从很远星系来的光是在几百万年之前发出的这样当我们看到宇宙时,我们是套看它的过去"</span>,</span><br><span class="line">            <span class="string">"如果只用一种方式了解某样事物,你就不会真正了解它。了解事物真正含义的秘密取决于如何将其与我们所了解的事物相联系"</span>]</span><br><span class="line">    data_new = []</span><br><span class="line">    <span class="keyword">for</span> sent <span class="keyword">in</span> data:</span><br><span class="line">        data_new.append(cut_word(sent))</span><br><span class="line">    <span class="comment"># print(data_new)</span></span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = CountVectorizer()</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_final = transfer.fit_transform(data_new)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_final.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_word</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment">#进行中文分词</span></span><br><span class="line">    text = <span class="string">" "</span>.join(list(jieba.cut(text))) </span><br><span class="line">    <span class="keyword">return</span> text</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[0 0 1 1 0 1 1]</span><br><span class="line"> [1 1 0 0 1 1 0]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;dislike&#39;, &#39;flife&#39;, &#39;life&#39;, &#39;like&#39;, &#39;long&#39;, &#39;python&#39;, &#39;short&#39;]</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">data_new:</span><br><span class="line"> [[0 0 1 0 0 0 2 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 2 0 1 0 2 1 0 0 0 1 1 0 0 0]</span><br><span class="line"> [0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 1 3 0 0 0 0 1 0 0 0 0 2 0 0 0 0 0 1 1]</span><br><span class="line"> [1 1 0 0 4 3 0 0 0 0 1 1 0 1 0 1 1 0 1 0 0 1 0 0 0 1 0 0 0 2 1 0 0 1 0 0]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;一种&#39;, &#39;不会&#39;, &#39;不要&#39;, &#39;之前&#39;, &#39;了解&#39;, &#39;事物&#39;, &#39;今天&#39;, &#39;光是在&#39;, &#39;几百万年&#39;, &#39;发出&#39;, &#39;取决于&#39;, &#39;只用&#39;, &#39;后天&#39;, &#39;含义&#39;, &#39;大部分&#39;, &#39;如何&#39;, &#39;如果&#39;, &#39;宇宙&#39;, &#39;我们&#39;, &#39;所以&#39;, &#39;放弃&#39;, &#39;方式&#39;, &#39;明天&#39;, &#39;星系&#39;, &#39;晚上&#39;, &#39;某样&#39;, &#39;残酷&#39;, &#39;每个&#39;, &#39;看到&#39;, &#39;真正&#39;, &#39;秘密&#39;, &#39;绝对&#39;, &#39;美好&#39;, &#39;联系&#39;, &#39;过去&#39;, &#39;这样&#39;]</span><br></pre></td></tr></table></figure>
+
+<h5 id="TfidfVectorizer提取"><a href="#TfidfVectorizer提取" class="headerlink" title="TfidfVectorizer提取"></a>TfidfVectorizer提取</h5><p>用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度</p>
+<p><strong>1、导入包</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.feature_extraction.text import TfidfVectorizer</span><br><span class="line">import jieba</span><br></pre></td></tr></table></figure>
+
+<p><strong>2、函数编写</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tfidf_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#用TF-IDF的方法进行文本特征抽取</span></span><br><span class="line">    <span class="comment">#1、将中文文本进行分词</span></span><br><span class="line">    data = [<span class="string">"今天很残酷,明天更残酷,后天很美好,但绝对大部分是死在明天晚上,所以每个人不要放弃今天。"</span>,</span><br><span class="line">            <span class="string">"我们看到的从很远星系来的光是在几百万年之前发出的这样当我们看到宇宙时,我们是套看它的过去"</span>,</span><br><span class="line">            <span class="string">"如果只用一种方式了解某样事物,你就不会真正了解它。了解事物真正含义的秘密取决于如何将其与我们所了解的事物相联系"</span>]</span><br><span class="line">    data_new = []</span><br><span class="line">    <span class="keyword">for</span> sent <span class="keyword">in</span> data:</span><br><span class="line">        data_new.append(cut_word(sent))</span><br><span class="line">    <span class="comment"># print(data_new)</span></span><br><span class="line">    <span class="comment">#实例化一个转换器类</span></span><br><span class="line">    transfer = TfidfVectorizer()</span><br><span class="line">    <span class="comment">#调用fit_fransform()</span></span><br><span class="line">    data_final = transfer.fit_transform(data_new)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_final.toarray())</span><br><span class="line">    print(<span class="string">"特征名称:\n"</span>,transfer.get_feature_names())</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cut_word</span><span class="params">(text)</span>:</span></span><br><span class="line">    <span class="comment">#进行中文分词</span></span><br><span class="line">    text = <span class="string">" "</span>.join(list(jieba.cut(text))) </span><br><span class="line">    <span class="keyword">return</span> text</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、运行结果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">data_new:</span><br><span class="line"> [[0.         0.         0.21821789 0.         0.         0.</span><br><span class="line">  0.43643578 0.         0.         0.         0.         0.</span><br><span class="line">  0.21821789 0.         0.21821789 0.         0.         0.</span><br><span class="line">  0.         0.21821789 0.21821789 0.         0.43643578 0.</span><br><span class="line">  0.21821789 0.         0.43643578 0.21821789 0.         0.</span><br><span class="line">  0.         0.21821789 0.21821789 0.         0.         0.        ]</span><br><span class="line"> [0.         0.         0.         0.2410822  0.         0.</span><br><span class="line">  0.         0.2410822  0.2410822  0.2410822  0.         0.</span><br><span class="line">  0.         0.         0.         0.         0.         0.2410822</span><br><span class="line">  0.55004769 0.         0.         0.         0.         0.2410822</span><br><span class="line">  0.         0.         0.         0.         0.48216441 0.</span><br><span class="line">  0.         0.         0.         0.         0.2410822  0.2410822 ]</span><br><span class="line"> [0.15698297 0.15698297 0.         0.         0.62793188 0.47094891</span><br><span class="line">  0.         0.         0.         0.         0.15698297 0.15698297</span><br><span class="line">  0.         0.15698297 0.         0.15698297 0.15698297 0.</span><br><span class="line">  0.1193896  0.         0.         0.15698297 0.         0.</span><br><span class="line">  0.         0.15698297 0.         0.         0.         0.31396594</span><br><span class="line">  0.15698297 0.         0.         0.15698297 0.         0.        ]]</span><br><span class="line">特征名称:</span><br><span class="line"> [&#39;一种&#39;, &#39;不会&#39;, &#39;不要&#39;, &#39;之前&#39;, &#39;了解&#39;, &#39;事物&#39;, &#39;今天&#39;, &#39;光是在&#39;, &#39;几百万年&#39;, &#39;发出&#39;, &#39;取决于&#39;, &#39;只用&#39;, &#39;后天&#39;, &#39;含义&#39;, &#39;大部分&#39;, &#39;如何&#39;, &#39;如果&#39;, &#39;宇宙&#39;, &#39;我们&#39;, &#39;所以&#39;, &#39;放弃&#39;, &#39;方式&#39;, &#39;明天&#39;, &#39;星系&#39;, &#39;晚上&#39;, &#39;某样&#39;, &#39;残酷&#39;, &#39;每个&#39;, &#39;看到&#39;, &#39;真正&#39;, &#39;秘密&#39;, &#39;绝对&#39;, &#39;美好&#39;, &#39;联系&#39;, &#39;过去&#39;, &#39;这样&#39;]</span><br></pre></td></tr></table></figure>
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong s>
+              本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow"
+                target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%AD%97%E5%85%B8%E3%80%81%E6%96%87%E5%AD%97%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/" rel="tag">特征提取</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/04/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B%E7%A4%BA%E4%BE%8B/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">机器学习-线性回归模型示例</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'OGS7pkYNImeSGNCCljAq6N80-gzGzoHsz',
+        app_key: 'SJofi4YSV5ybrtiyHLaWlfpN',
+        path: window.location.pathname,
+        notify: 'true',
+        verify: 'false',
+        avatar: 'mp',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020
+        William Jin
+      </li>
+      <li>
+        
+      </li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s4.cnzz.com/z_stat.php?id=1278671983&amp;web_id=1278671983'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="to_top">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="洁癖Man"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2020/03/02/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<script src="/js/share.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+    strings: ['面朝大海，春暖花开','愿你一生努力，一生被爱','想要的都拥有，得不到的都释怀'],
+    startDelay: 0,
+    typeSpeed: 200,
+    loop: true,
+    backSpeed: 100,
+    showCursor: true
+    });
+  } catch (err) {
+  }
+  
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer:'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    onClick: (e) => {
+      $('.toc-link').removeClass('is-active-link');
+      $(`a[href=${e.target.hash}]`).addClass('is-active-link');
+      $(e.target.hash).scrollIntoView();
+      return false;
+    }
+  });
+</script>
+
+
+<script>
+  var ayerConfig = {
+    mathjax: false
+  }
+</script>
+
+
+<script src="/js/ayer.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=1413863166&auto=1&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+</body>
+
+</html>
