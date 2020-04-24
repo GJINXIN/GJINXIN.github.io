@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>喜欢的音乐</title>
+    <url>/2020/04/24/%E5%96%9C%E6%AC%A2%E7%9A%84%E9%9F%B3%E4%B9%90/</url>
+    <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% aplayerlist %&#125;&#123;<span class="string">"narrow"</span>: <span class="literal">false</span>,<span class="string">"autoplay"</span>: <span class="literal">true</span>,<span class="string">"showlrc"</span>: 3,<span class="string">"mode"</span>: <span class="string">"random"</span>,<span class="string">"music"</span>: [&#123;<span class="string">"url"</span>: <span class="string">"https://music.163.com/#/outchain/0/489173931"</span>&#125;]&#125;&#123;% endaplayerlist %&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>机器学习-特征预处理：归一化</title>
     <url>/2020/04/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%9A%E5%BD%92%E4%B8%80%E5%8C%96/</url>
     <content><![CDATA[<h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p>通过对原始数据进行变换把数据映射到(默认为[0,1])之间</p>
