@@ -43,7 +43,7 @@
     <link href="http://yoursite.com/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%AD%97%E5%85%B8%E3%80%81%E6%96%87%E5%AD%97%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/"/>
     <id>http://yoursite.com/2020/04/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%AD%97%E5%85%B8%E3%80%81%E6%96%87%E5%AD%97%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/</id>
     <published>2020-04-20T09:09:58.736Z</published>
-    <updated>2020-04-20T09:11:08.925Z</updated>
+    <updated>2020-04-25T13:51:34.402Z</updated>
     
     <summary type="html">
     
@@ -375,9 +375,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
       <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
     
   </entry>
   
