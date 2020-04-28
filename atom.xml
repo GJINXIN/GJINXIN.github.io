@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-28T03:18:23.217Z</updated>
+  <updated>2020-04-28T10:23:03.495Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试博客</title>
+    <link href="http://yoursite.com/2020/04/28/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2020/04/28/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-04-28T10:22:39.000Z</published>
+    <updated>2020-04-28T10:23:03.495Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>机器学习-特征预处理：标准化</title>
@@ -472,27 +497,6 @@
     
     
       <category term="JQuery" scheme="http://yoursite.com/tags/JQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Filter过滤敏感词汇</title>
-    <link href="http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87/"/>
-    <id>http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87/</id>
-    <published>2020-03-21T15:26:55.361Z</published>
-    <updated>2020-03-21T15:28:13.381Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;过滤敏感词汇的实现，需要对 request 对象进行增强，增强获取参数的相关方法，然后替换敏感词汇为***。使用代理模式实现&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="filter" scheme="http://yoursite.com/tags/filter/"/>
     
   </entry>
   
