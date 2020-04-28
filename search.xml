@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>机器学习-特征预处理：标准化</title>
+    <url>/2020/04/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%9A%E6%A0%87%E5%87%86%E5%8C%96/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h1><p>通过对原始数据进行变换把数据变换到均值为0,标准差为1范围內</p>
+<h1 id="二、公式"><a href="#二、公式" class="headerlink" title="二、公式"></a>二、公式</h1><p><img src="/" class="lazyload" data-src="https://i.loli.net/2020/04/28/sfxQtiX7MH5vjW3.png"  alt="image.png"></p>
+<p>​    示例：</p>
+<p><img src="/" class="lazyload" data-src="https://i.loli.net/2020/04/28/ITWDcukps59Hwb3.png"  alt="image.png"></p>
+<h1 id="三、API"><a href="#三、API" class="headerlink" title="三、API"></a>三、API</h1><p><strong>sklearn. preprocessing .MinMaxScaler (feature_range=(0, 1)…)</strong></p>
+<p>​        <strong>o MinMaxScalar .fit_ transform(X)</strong></p>
+<pre><code>**X: numpy array格式的数据[n_ samples, n_ features]**</code></pre><p>​        <strong>返回值:转换后的形状相同的array</strong></p>
+<h1 id="四、代码实例"><a href="#四、代码实例" class="headerlink" title="四、代码实例"></a>四、代码实例</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stand_demo</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#标准化</span></span><br><span class="line">    <span class="comment">#归一化</span></span><br><span class="line">    <span class="comment">#1.获取数据</span></span><br><span class="line">    data = pd.read_csv(<span class="string">"dating.txt"</span>)</span><br><span class="line">    data = data.iloc[:,:<span class="number">3</span>]</span><br><span class="line">    print(<span class="string">"data:\n"</span>,data)</span><br><span class="line">    <span class="comment">#2.实例化一个转换器类</span></span><br><span class="line">    transfer = StandardScaler()</span><br><span class="line">    <span class="comment">#3.调用fit_transform</span></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    print(<span class="string">"data_new:\n"</span>,data_new)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="五、运行结果"><a href="#五、运行结果" class="headerlink" title="五、运行结果"></a>五、运行结果</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">data:</span><br><span class="line">     milage     Liters  Consumtime</span><br><span class="line">0    40920   8.326976    0.953952</span><br><span class="line">1    14488   7.153469    1.673904</span><br><span class="line">2    26052   1.441871    0.895124</span><br><span class="line">3    75136  13.147394    0.428964</span><br><span class="line">4    38344   1.669788    0.134296</span><br><span class="line">5    72993  18.141748    1.932955</span><br><span class="line">6    35948   6.838792    1.213192</span><br><span class="line">7    42666  13.276369    0.543888</span><br><span class="line">8    67497   8.631577    0.749278</span><br><span class="line">9    35483  12.273169    1.508953</span><br><span class="line">10   50242   3.723498    0.831917</span><br><span class="line">11   63275   8.385879    1.669485</span><br><span class="line">12    5569   4.875435    0.728658</span><br><span class="line">13   51052   4.688098    0.625224</span><br><span class="line">14   77372  15.299570    0.331351</span><br><span class="line">15   43673   1.889461    0.191283</span><br><span class="line">16   61364   7.516754    1.269164</span><br><span class="line">17   69673  14.239195    0.261333</span><br><span class="line">18   15669   0.000000    1.259185</span><br><span class="line">data_new:</span><br><span class="line"> [[ 0.12304713  0.24281169  0.08961701]</span><br><span class="line"> [-1.09340804  0.00255574  1.51545904]</span><br><span class="line"> [-0.5612089  -1.16679851 -0.02688998]</span><br><span class="line"> [ 1.69773803  1.22971173 -0.95010503]</span><br><span class="line"> [ 0.00449429 -1.12013631 -1.53368563]</span><br><span class="line"> [ 1.59911275  2.25222225  2.02850131]</span><br><span class="line"> [-0.10577457 -0.06186912  0.60303358]</span><br><span class="line"> [ 0.20340165  1.2561172  -0.7225017 ]</span><br><span class="line"> [ 1.34617549  0.30517366 -0.31573334]</span><br><span class="line"> [-0.12717483  1.05072877  1.18877883]</span><br><span class="line"> [ 0.5520648  -0.6996735  -0.15206943]</span><br><span class="line"> [ 1.15187034  0.2548711   1.50670735]</span><br><span class="line"> [-1.50387882 -0.46383365 -0.3565706 ]</span><br><span class="line"> [ 0.58934267 -0.50218777 -0.56141834]</span><br><span class="line"> [ 1.80064336  1.6703338  -1.14342447]</span><br><span class="line"> [ 0.24974587 -1.07516193 -1.42082469]</span><br><span class="line"> [ 1.06392218  0.07693228  0.71388434]</span><br><span class="line"> [ 1.4463195   1.45323974 -1.28209289]</span><br><span class="line"> [-1.03905598 -1.4619975   0.69412125]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>在已有样本足够多的情况下比较稳定，适合现代嘈杂大数据场景。</p>
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>标准化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习-特征预处理：归一化</title>
     <url>/2020/04/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%9A%E5%BD%92%E4%B8%80%E5%8C%96/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、定义"><a href="#一、定义" class="headerlink" title="一、定义"></a>一、定义</h3><p>通过对原始数据进行变换把数据映射到(默认为[0,1])之间</p>
@@ -397,8 +420,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
         <tag>AJAX</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>

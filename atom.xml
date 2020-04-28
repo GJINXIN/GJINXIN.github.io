@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-24T10:34:24.709Z</updated>
+  <updated>2020-04-28T03:18:23.217Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习-特征预处理：标准化</title>
+    <link href="http://yoursite.com/2020/04/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%9A%E6%A0%87%E5%87%86%E5%8C%96/"/>
+    <id>http://yoursite.com/2020/04/28/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%9A%E6%A0%87%E5%87%86%E5%8C%96/</id>
+    <published>2020-04-28T03:13:49.000Z</published>
+    <updated>2020-04-28T03:18:23.217Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="标准化" scheme="http://yoursite.com/tags/%E6%A0%87%E5%87%86%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习-特征预处理：归一化</title>
@@ -375,9 +402,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
-    
       <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
+    
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
     
   </entry>
   
@@ -458,27 +485,6 @@
     <summary type="html">
     
       &lt;p&gt;过滤敏感词汇的实现，需要对 request 对象进行增强，增强获取参数的相关方法，然后替换敏感词汇为***。使用代理模式实现&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
-    
-    
-      <category term="filter" scheme="http://yoursite.com/tags/filter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Filter过滤器验证用户是否登陆功能</title>
-    <link href="http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E5%99%A8%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD/"/>
-    <id>http://yoursite.com/2020/03/21/Filter%E8%BF%87%E6%BB%A4%E5%99%A8%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E6%98%AF%E5%90%A6%E7%99%BB%E9%99%86%E5%8A%9F%E8%83%BD/</id>
-    <published>2020-03-21T13:00:53.819Z</published>
-    <updated>2020-04-24T10:26:25.961Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为了保护信息安全，防止直接访问信息页，需要验证用户是否登陆。思路为，先过滤掉登陆功能所包含资源的路径，在访问其他资源时判断用户是否登陆——判断 Session 中是否包含User。有的话放行，没有的话跳转到登陆页。&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/03/21/ShtnIeXgMNaHALd.png&quot; alt=&quot;Snipaste_2020-03-21_20-50-13.png&quot;&gt;&lt;/p&gt;
     
     </summary>
     
