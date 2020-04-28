@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-28T10:23:03.495Z</updated>
+  <updated>2020-04-28T10:30:33.747Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试博客</title>
-    <link href="http://yoursite.com/2020/04/28/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2020/04/28/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</id>
-    <published>2020-04-28T10:22:39.000Z</published>
-    <updated>2020-04-28T10:23:03.495Z</updated>
+    <title>特征降维-Filter(过滤式)特征选择</title>
+    <link href="http://yoursite.com/2020/04/28/%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4-Filter-%E8%BF%87%E6%BB%A4%E5%BC%8F-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/"/>
+    <id>http://yoursite.com/2020/04/28/%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4-Filter-%E8%BF%87%E6%BB%A4%E5%BC%8F-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/</id>
+    <published>2020-04-28T10:16:59.000Z</published>
+    <updated>2020-04-28T10:30:33.747Z</updated>
     
     <summary type="html">
     
@@ -36,8 +36,10 @@
     </summary>
     
     
-      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+    
+      <category term="Filter特征选择" scheme="http://yoursite.com/tags/Filter%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9/"/>
     
   </entry>
   
@@ -427,9 +429,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
   </entry>
   
