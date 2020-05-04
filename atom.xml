@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-03T14:54:03.371Z</updated>
+  <updated>2020-05-04T02:29:02.879Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/05/03/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%EF%BC%9AK-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2020/05/03/%E5%88%86%E7%B1%BB%E7%AE%97%E6%B3%95%EF%BC%9AK-%E8%BF%91%E9%82%BB%E7%AE%97%E6%B3%95/</id>
     <published>2020-05-03T14:05:17.000Z</published>
-    <updated>2020-05-03T14:54:03.371Z</updated>
+    <updated>2020-05-04T02:29:02.879Z</updated>
     
     <summary type="html">
     
@@ -514,9 +514,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
   </entry>
   

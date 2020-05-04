@@ -12,11 +12,11 @@
 <h2 id="欧式距离">1、欧式距离</h2>
 <p>​ a(a1,a2,a3) b(b1,b2,b3)</p>
 <p>​ 计算a、b两点距离：</p>
-<p>​ <span class="math inline">\(\sqrt{(a1-b1)^2 +(a2-b2)^2 +(a3-b3)^2}\)</span></p>
+<p>​ ​</p>
 <h2 id="曼哈顿距离">2、曼哈顿距离</h2>
 <p>​ a(a1,a2,a3) b(b1,b2,b3)</p>
 <p>​ 计算a、b两点距离：</p>
-<p>​ <span class="math inline">\(|a1-b1|+|a2-b2|+|a3-b3|\)</span></p>
+<p>​ |a1-b1|+|a2-b2|+|a3-b3|​</p>
 <h1 id="三api">三、API</h1>
 <ul>
 <li>sklearn. neighbors. KNeighborsClassifier(n_neighbors=5, algorithm=‘auto’)
@@ -599,8 +599,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>AJAX</tag>
         <tag>Redis</tag>
+        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
