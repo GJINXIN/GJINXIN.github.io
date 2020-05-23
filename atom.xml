@@ -329,7 +329,7 @@
     <link href="http://yoursite.com/2020/04/10/SpringBoot%E5%9F%BA%E4%BA%8EMybatis%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
     <id>http://yoursite.com/2020/04/10/SpringBoot%E5%9F%BA%E4%BA%8EMybatis%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
     <published>2020-04-10T04:45:26.201Z</published>
-    <updated>2020-04-10T04:48:45.982Z</updated>
+    <updated>2020-05-23T07:24:39.016Z</updated>
     
     <summary type="html">
     
@@ -343,6 +343,8 @@
     
     
       <category term="Mybatis" scheme="http://yoursite.com/tags/Mybatis/"/>
+    
+      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
     
   </entry>
   
@@ -510,9 +512,9 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
-      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
-    
       <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
+      <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
   </entry>
   

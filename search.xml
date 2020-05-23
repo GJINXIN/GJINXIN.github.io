@@ -421,6 +421,7 @@
       </categories>
       <tags>
         <tag>Mybatis</tag>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
@@ -602,8 +603,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>AJAX</tag>
         <tag>Redis</tag>
+        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
