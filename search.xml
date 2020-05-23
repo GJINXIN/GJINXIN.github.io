@@ -420,8 +420,8 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>Mybatis</tag>
         <tag>SpringBoot</tag>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -495,6 +495,7 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
+        <tag>SpringBoot</tag>
         <tag>web增删改查</tag>
       </tags>
   </entry>
@@ -533,6 +534,7 @@
       </categories>
       <tags>
         <tag>Jdbc</tag>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
@@ -553,6 +555,7 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
+        <tag>SpringBoot</tag>
         <tag>文件上传</tag>
       </tags>
   </entry>
@@ -579,6 +582,7 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
+        <tag>SpringBoot</tag>
         <tag>yaml</tag>
       </tags>
   </entry>
@@ -603,8 +607,8 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>Redis</tag>
         <tag>AJAX</tag>
+        <tag>Redis</tag>
       </tags>
   </entry>
   <entry>
