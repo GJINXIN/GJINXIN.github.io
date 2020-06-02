@@ -319,6 +319,7 @@
       </categories>
       <tags>
         <tag>Tensorflow</tag>
+        <tag>Anaconda</tag>
       </tags>
   </entry>
   <entry>
@@ -349,6 +350,7 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+        <tag>Axios</tag>
       </tags>
   </entry>
   <entry>
@@ -372,6 +374,7 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+        <tag>Axios</tag>
       </tags>
   </entry>
   <entry>
@@ -420,8 +423,9 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
         <tag>Mybatis</tag>
+        <tag>SpringBoot</tag>
+        <tag>Thymeleaf</tag>
       </tags>
   </entry>
   <entry>
@@ -465,6 +469,7 @@
       </categories>
       <tags>
         <tag>generator</tag>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -497,6 +502,7 @@
       <tags>
         <tag>SpringBoot</tag>
         <tag>web增删改查</tag>
+        <tag>Thymeleaf</tag>
       </tags>
   </entry>
   <entry>
@@ -607,8 +613,9 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>AJAX</tag>
         <tag>Redis</tag>
+        <tag>AJAX</tag>
+        <tag>JQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -624,6 +631,7 @@
       </categories>
       <tags>
         <tag>Redis</tag>
+        <tag>Jedis</tag>
       </tags>
   </entry>
   <entry>
@@ -691,6 +699,7 @@
       </categories>
       <tags>
         <tag>filter</tag>
+        <tag>Session</tag>
       </tags>
   </entry>
   <entry>
@@ -805,7 +814,7 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>session</tag>
+        <tag>Session</tag>
       </tags>
   </entry>
   <entry>
@@ -892,7 +901,7 @@
         <category>JAVAWeb</category>
       </categories>
       <tags>
-        <tag>Servlet</tag>
+        <tag>Request解析</tag>
       </tags>
   </entry>
   <entry>
