@@ -532,11 +532,11 @@
       <category term="JAVAWeb" scheme="http://yoursite.com/categories/JAVAWeb/"/>
     
     
+      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
+    
       <category term="AJAX" scheme="http://yoursite.com/tags/AJAX/"/>
     
       <category term="JQuery" scheme="http://yoursite.com/tags/JQuery/"/>
-    
-      <category term="Redis" scheme="http://yoursite.com/tags/Redis/"/>
     
   </entry>
   
