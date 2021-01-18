@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Numpy-ndarray运算</title>
+    <url>/2021/01/18/Numpy-ndarray%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="一、逻辑运算"><a href="#一、逻辑运算" class="headerlink" title="一、逻辑运算"></a>一、逻辑运算</h1><h2 id="1-布尔运算"><a href="#1-布尔运算" class="headerlink" title="1.布尔运算"></a>1.布尔运算</h2><p>​        通过&lt; , &gt;号判断数组全部值是否符合条件，如是否大于1，大于1会置为True，小于1会置为False</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#生成0到1之间，8行10列均匀分布的数组</span></span><br><span class="line">stock_change = np.random.normal(<span class="number">0</span>,<span class="number">1</span>,(<span class="number">8</span>,<span class="number">10</span>))</span><br><span class="line"><span class="comment">#大于0.5的值置为True，否则置为False</span></span><br><span class="line">stock_change &gt; <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">array([[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,</span><br><span class="line">         <span class="literal">True</span>],</span><br><span class="line">       [<span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,</span><br><span class="line">         <span class="literal">True</span>],</span><br><span class="line">       [<span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,</span><br><span class="line">        <span class="literal">False</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,</span><br><span class="line">        <span class="literal">False</span>],</span><br><span class="line">       [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>,  <span class="literal">True</span>,</span><br><span class="line">        <span class="literal">False</span>],</span><br><span class="line">       [<span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,</span><br><span class="line">         <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>,</span><br><span class="line">        <span class="literal">False</span>],</span><br><span class="line">       [ <span class="literal">True</span>, <span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>,</span><br><span class="line">        <span class="literal">False</span>]])</span><br><span class="line"><span class="comment">#将大于0.5的数置为1.1</span></span><br><span class="line">stock_change[stock_change&gt;<span class="number">0.5</span>]=<span class="number">1.1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-通用判断函数"><a href="#2-通用判断函数" class="headerlink" title="2.通用判断函数"></a>2.通用判断函数</h2><h3 id="np-all-布尔值"><a href="#np-all-布尔值" class="headerlink" title="np.all(布尔值)"></a>np.all(布尔值)</h3><p>​        只要有一个False，就返回False；只有全是True才返回True</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.all( stock_change[<span class="number">0</span>:<span class="number">2</span>,<span class="number">0</span>:<span class="number">5</span>]&gt;<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="np-any-布尔值"><a href="#np-any-布尔值" class="headerlink" title="np.any(布尔值)"></a>np.any(布尔值)</h3><p>​        只要有一个True，就返回True；只有全是False才返回False </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.any( stock_change[<span class="number">0</span>:<span class="number">2</span>,<span class="number">0</span>:<span class="number">5</span>]&gt;<span class="number">0</span>)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-三元运算符"><a href="#3-三元运算符" class="headerlink" title="3.三元运算符"></a>3.三元运算符</h2><h3 id="np-where-布尔值，True的位置的值，False的位置的值"><a href="#np-where-布尔值，True的位置的值，False的位置的值" class="headerlink" title="np.where(布尔值，True的位置的值，False的位置的值)"></a>np.where(布尔值，True的位置的值，False的位置的值)</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">temp = stock_change[:<span class="number">4</span>,:<span class="number">4</span>]</span><br><span class="line"><span class="comment">#判断数组中的值是否大于0，是置于1，否置为0</span></span><br><span class="line">np.where(temp&gt;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">array([[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="复合逻辑运算"><a href="#复合逻辑运算" class="headerlink" title="复合逻辑运算"></a>复合逻辑运算</h3><p>​        np.logical_and( ) 与运算</p>
+<p>​        np.logical_or( ) 或运算</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#挑选大于0.5并且小于1的数</span></span><br><span class="line">np.logical_and(temp&gt;<span class="number">0.5</span>,temp&lt;<span class="number">1</span>)</span><br><span class="line">array([[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">       [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">       [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">       [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>]])</span><br><span class="line"><span class="comment">#挑选大于0.5或小于1的数</span></span><br><span class="line">np.logical_or(temp&gt;<span class="number">0.5</span>,temp&lt;<span class="number">1</span>)</span><br><span class="line">array([[ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>],</span><br><span class="line">       [ <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="二、统计运算"><a href="#二、统计运算" class="headerlink" title="二、统计运算"></a>二、统计运算</h1><h2 id="1-统计指标函数"><a href="#1-统计指标函数" class="headerlink" title="1.统计指标函数"></a>1.统计指标函数</h2><h4 id="常见函数min、max、mean-平均值-、median-中位数-、var-方差-、std-标准差"><a href="#常见函数min、max、mean-平均值-、median-中位数-、var-方差-、std-标准差" class="headerlink" title="常见函数min、max、mean(平均值)、median(中位数)、var(方差)、std(标准差)"></a>常见函数min、max、mean(平均值)、median(中位数)、var(方差)、std(标准差)</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#调用方法</span></span><br><span class="line"><span class="comment">#1.temp.max(1)</span></span><br><span class="line"><span class="comment">#2.np.max(temp,0)</span></span><br><span class="line"><span class="comment">#1表示按行，0表示按列</span></span><br><span class="line">temp</span><br><span class="line">array([[<span class="number">-0.64249698</span>,  <span class="number">0.20527198</span>, <span class="number">-0.25116011</span>,  <span class="number">0.21976393</span>],</span><br><span class="line">       [<span class="number">-1.03996567</span>,  <span class="number">1.1</span>       ,  <span class="number">0.37277963</span>, <span class="number">-0.57377565</span>],</span><br><span class="line">       [ <span class="number">0.29487292</span>,  <span class="number">1.1</span>       , <span class="number">-1.39841772</span>,  <span class="number">1.1</span>       ],</span><br><span class="line">       [ <span class="number">1.1</span>       ,  <span class="number">1.1</span>       , <span class="number">-1.18514356</span>, <span class="number">-0.11440521</span>]])</span><br><span class="line"><span class="comment">#按列寻找最大值</span></span><br><span class="line">temp.max(<span class="number">0</span>)</span><br><span class="line">array([<span class="number">1.1</span>       , <span class="number">1.1</span>       , <span class="number">0.37277963</span>, <span class="number">1.1</span>       ])</span><br><span class="line"><span class="comment">#按行寻找最大值</span></span><br><span class="line">temp.max(<span class="number">1</span>)</span><br><span class="line">array([<span class="number">0.21976393</span>, <span class="number">1.1</span>       , <span class="number">1.1</span>       , <span class="number">1.1</span>       ])</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-返回最大值、最小值所在位置"><a href="#2-返回最大值、最小值所在位置" class="headerlink" title="2.返回最大值、最小值所在位置"></a>2.返回最大值、最小值所在位置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#np.argmax(temp, axis=)  按行：1，按列：0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#np.argmin(temp, axis=)</span></span><br><span class="line">np.argmax(temp,<span class="number">1</span>)</span><br><span class="line">array([<span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>], dtype=int64)</span><br><span class="line"></span><br><span class="line">np.argmin(temp,<span class="number">0</span>)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>], dtype=int64)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、数组间运算"><a href="#三、数组间运算" class="headerlink" title="三、数组间运算"></a>三、数组间运算</h1><h2 id="1-数组与数的运算"><a href="#1-数组与数的运算" class="headerlink" title="1.数组与数的运算"></a>1.数组与数的运算</h2><p>​    相当于数组每个数都进行相同的运算</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr1 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]])</span><br><span class="line">arr1 + <span class="number">10</span></span><br><span class="line">array([[<span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">14</span>],</span><br><span class="line">       [<span class="number">15</span>, <span class="number">16</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">11</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-数组与数组运算"><a href="#2-数组与数组运算" class="headerlink" title="2.数组与数组运算"></a>2.数组与数组运算</h2><h3 id="广播机制"><a href="#广播机制" class="headerlink" title="广播机制"></a>广播机制</h3><p>​    方便不同形状的ndarray进行运算</p>
+<p><strong>可以运算的情况：</strong></p>
+<p>1.维度相等</p>
+<p>2.shape 其中对应一个地方为1</p>
+<h2 id="3-矩阵运算"><a href="#3-矩阵运算" class="headerlink" title="3.矩阵运算"></a>3.矩阵运算</h2><h3 id="3-1矩阵存储方法"><a href="#3-1矩阵存储方法" class="headerlink" title="3.1矩阵存储方法"></a>3.1矩阵存储方法</h3><p>1.ndarrary二维数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = np.array([[<span class="number">80</span>,<span class="number">86</span>],[<span class="number">82</span>,<span class="number">80</span>]])</span><br><span class="line">array([[<span class="number">80</span>, <span class="number">86</span>],</span><br><span class="line">       [<span class="number">82</span>, <span class="number">80</span>]])</span><br></pre></td></tr></table></figure>
+
+<p>2.matrix数据结构</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.mat([[<span class="number">80</span>,<span class="number">86</span>],[<span class="number">82</span>,<span class="number">80</span>]])</span><br><span class="line">matrix([[<span class="number">80</span>, <span class="number">86</span>],</span><br><span class="line">        [<span class="number">82</span>, <span class="number">80</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2矩阵乘法运算"><a href="#3-2矩阵乘法运算" class="headerlink" title="3.2矩阵乘法运算"></a>3.2矩阵乘法运算</h3><p>要求：</p>
+<p>   形状：（m ， n） * （n ， l）</p>
+<p>运算规则：1.ndarray存储</p>
+<p>​                    <strong>np.matmul(arr1,arr2)</strong></p>
+<p>​                    <strong>np.dot(arr1,arr2)</strong></p>
+<p>​                2.matrix存储</p>
+<p>​                    <strong>arr1 * arr2</strong></p>
+<p>​    注：ndarray存储相乘需要满足广播机制</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">weights_mat</span><br><span class="line">matrix([[<span class="number">0.3</span>],</span><br><span class="line">        [<span class="number">0.7</span>]])</span><br><span class="line">data = np.array([[<span class="number">80</span>,<span class="number">86</span>],</span><br><span class="line">    			[<span class="number">82</span>,<span class="number">80</span>],</span><br><span class="line">    			[<span class="number">85</span>,<span class="number">78</span>],</span><br><span class="line">   				[<span class="number">90</span>,<span class="number">90</span>],</span><br><span class="line">    			[<span class="number">86</span>,<span class="number">82</span>],</span><br><span class="line">    			[<span class="number">82</span>,<span class="number">90</span>],</span><br><span class="line">    			[<span class="number">78</span>,<span class="number">80</span>],</span><br><span class="line">    			[<span class="number">92</span>,<span class="number">94</span>]])</span><br><span class="line">data * weights_mat</span><br><span class="line">matrix([[<span class="number">84.2</span>],</span><br><span class="line">        [<span class="number">80.6</span>],</span><br><span class="line">        [<span class="number">80.1</span>],</span><br><span class="line">        [<span class="number">90.</span> ],</span><br><span class="line">        [<span class="number">83.2</span>],</span><br><span class="line">        [<span class="number">87.6</span>],</span><br><span class="line">        [<span class="number">79.4</span>],</span><br><span class="line">        [<span class="number">93.4</span>]])</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>numpy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>攻防世界-Web篇</title>
     <url>/2020/05/16/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C-Web%E7%AF%87/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="1、题目：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。"><a href="#1、题目：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。" class="headerlink" title="1、题目：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。"></a>1、题目：X老师让小宁同学查看一个网页的源代码，但小宁同学发现鼠标右键好像不管用了。</h2><p>思路及方法：</p>
@@ -423,8 +488,8 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>Mybatis</tag>
         <tag>SpringBoot</tag>
+        <tag>Mybatis</tag>
         <tag>Thymeleaf</tag>
       </tags>
   </entry>
@@ -468,8 +533,8 @@
         <category>Mybatis</category>
       </categories>
       <tags>
-        <tag>generator</tag>
         <tag>Mybatis</tag>
+        <tag>generator</tag>
       </tags>
   </entry>
   <entry>
@@ -500,9 +565,9 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>web增删改查</tag>
         <tag>SpringBoot</tag>
         <tag>Thymeleaf</tag>
+        <tag>web增删改查</tag>
       </tags>
   </entry>
   <entry>
@@ -539,8 +604,8 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>SpringBoot</tag>
         <tag>Jdbc</tag>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
